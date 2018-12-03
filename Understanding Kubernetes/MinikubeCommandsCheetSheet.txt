@@ -21,6 +21,7 @@ kubectl expose deployment/application2 --type="NodePort" --port 8080
 kubectl describe services
 
 export NODE_PORT=$(kubectl get services/application2 -o go-template='{{(index .spec.ports 0).nodePort}}')
+
 echo NODE_PORT=$NODE_PORT
 
 curl $(minikube ip):$NODE_PORT/
@@ -29,11 +30,14 @@ curl $(minikube ip):$NODE_PORT/hello
 
 curl $(minikube ip):$NODE_PORT/hello/rahul
 
+kubectl scale deployments/kubernetes-bootcamp --replicas=4
 
+--------------
+kubectl set image deployments/application2 application2=rahulvaish/springbootdocker-v2
 
+kubectl rollout status deployments/application2
 
-
-
+export NODE_PORT=$(kubectl get services/application2 -o go-template='{{(index .spec.ports 0).nodePort}}')
 
 
 
