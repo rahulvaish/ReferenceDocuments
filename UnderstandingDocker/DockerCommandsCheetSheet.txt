@@ -1,0 +1,29 @@
+To delete all containers including its volumes use,
+
+docker rm -vf $(docker ps -a -q)
+
+
+To delete all the images,
+
+docker rmi -f $(docker images -a -q)
+Remember, you should remove all the containers before removing all the images from which those containers were created.
+_______________________________________________________________________________________________________________________
+
+docker build -t hellodocker .
+
+docker run hellodocker
+
+docker login
+
+docker tag hellodocker rahulvaish/hellodocker
+
+docker push rahulvaish/hellodocker
+
+docker run rahulvaish/hellodocker
+
+docker run -p 8080:8080 rahulvaish/springbootdocker
+
+docker run -p 8080:8080 rahulvaish/springbootdocker-v2
+
+
+
