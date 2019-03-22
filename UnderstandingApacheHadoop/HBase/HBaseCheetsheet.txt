@@ -1,0 +1,139 @@
+______________________________________________________________________________________________________________________
+
+CREATE
+______________________________________________________________________________________________________________________
+
+create 'Employee', 'Personal Data', 'Professional Data'
+hbase(main):002:0> create 'Employee', 'Personal Data', 'Professional Data'
+0 row(s) in 2.3040 seconds
+______________________________________________________________________________________________________________________
+
+INSERT
+______________________________________________________________________________________________________________________
+=> Hbase::Table - Employee
+hbase(main):003:0> put 'Employee', '01','Personal Data:Name', 'Rahul'
+0 row(s) in 1.0090 seconds
+
+hbase(main):004:0> put 'Employee', '01','Personal Data:Age', '30'
+0 row(s) in 0.0170 seconds
+
+hbase(main):005:0> put 'Employee', '01','Personal Data:Location', 'Delhi'
+0 row(s) in 0.0170 seconds
+
+hbase(main):006:0> put 'Employee', '02','Personal Data:Location', 'Delhi'
+0 row(s) in 0.0090 seconds
+
+hbase(main):007:0> put 'Employee', '02','Personal Data:Age', '30'
+0 row(s) in 0.0090 seconds
+
+hbase(main):008:0> put 'Employee', '02','Personal Data:Name', 'Kritika'
+0 row(s) in 0.0090 seconds
+
+______________________________________________________________________________________________________________________
+
+READ
+______________________________________________________________________________________________________________________
+
+hbase(main):009:0> scan 'Employee'
+ROW                                        COLUMN+CELL                                                                                                                
+ 01                                        column=Personal Data:Age, timestamp=1553052745557, value=30                                                                
+ 01                                        column=Personal Data:Location, timestamp=1553052763477, value=Delhi                                                        
+ 01                                        column=Personal Data:Name, timestamp=1553052729115, value=Rahul                                                            
+ 02                                        column=Personal Data:Age, timestamp=1553052798615, value=30                                                                
+ 02                                        column=Personal Data:Location, timestamp=1553052785146, value=Delhi                                                        
+ 02                                        column=Personal Data:Name, timestamp=1553052810683, value=Kritika                                                          
+2 row(s) in 0.2270 seconds
+hbase(main):010:0> put 'Employee', '01','Professional Data:Exp', '6 YR'
+0 row(s) in 0.0210 seconds
+
+hbase(main):011:0> put 'Employee', '01','Professional Data:Org', 'Incuspaze'
+0 row(s) in 0.0130 seconds
+
+hbase(main):012:0> put 'Employee', '01','Professional Data:Designation', 'Manager'
+0 row(s) in 0.0090 seconds
+
+hbase(main):013:0> put 'Employee', '02','Professional Data:Designation', 'SSE'
+0 row(s) in 0.0180 seconds
+
+hbase(main):014:0> put 'Employee', '02','Professional Data:Org', 'UHG'
+0 row(s) in 0.0150 seconds
+
+hbase(main):015:0> put 'Employee', '02','Professional Data:Exp', '6 YR'
+0 row(s) in 0.0170 seconds
+
+hbase(main):016:0> scan 'Employee'
+ROW                                        COLUMN+CELL                                                                                                                
+ 01                                        column=Personal Data:Age, timestamp=1553052745557, value=30                                                                
+ 01                                        column=Personal Data:Location, timestamp=1553052763477, value=Delhi                                                        
+ 01                                        column=Personal Data:Name, timestamp=1553052729115, value=Rahul                                                            
+ 01                                        column=Professional Data:Designation, timestamp=1553053036585, value=Manager                                               
+ 01                                        column=Professional Data:Exp, timestamp=1553053001299, value=6 YR                                                          
+ 01                                        column=Professional Data:Org, timestamp=1553053018858, value=Incuspaze                                                     
+ 02                                        column=Personal Data:Age, timestamp=1553052798615, value=30                                                                
+ 02                                        column=Personal Data:Location, timestamp=1553052785146, value=Delhi                                                        
+ 02                                        column=Personal Data:Name, timestamp=1553052810683, value=Kritika                                                          
+ 02                                        column=Professional Data:Designation, timestamp=1553053239308, value=SSE                                                   
+ 02                                        column=Professional Data:Exp, timestamp=1553053295644, value=6 YR                                                          
+ 02                                        column=Professional Data:Org, timestamp=1553053253603, value=UHG                                                           
+2 row(s) in 0.1280 seconds
+hbase(main):003:0> scan 'Employee' , {COLUMNS=> ['Personal Data:Name']}
+ROW                                        COLUMN+CELL                                                                                                                
+ 01                                        column=Personal Data:Name, timestamp=1553052729115, value=Rahul                                                            
+ 02                                        column=Personal Data:Name, timestamp=1553052810683, value=Kritika                                                          
+2 row(s) in 1.4070 seconds
+
+
+
+hbase(main):002:0> scan 'Employee' , {COLUMNS=> ['Personal Data:Name' , 'Professional Data:Exp']}
+ROW                                        COLUMN+CELL                                                                                                                
+ 01                                        column=Personal Data:Name, timestamp=1553052729115, value=Rahul                                                            
+ 01                                        column=Professional Data:Exp, timestamp=1553053001299, value=6 YR                                                          
+ 02                                        column=Personal Data:Name, timestamp=1553052810683, value=Kritika                                                          
+ 02                                        column=Professional Data:Exp, timestamp=1553053295644, value=6 YR                                                          
+2 row(s) in 0.0660 seconds
+
+
+
+
+______________________________________________________________________________________________________________________
+
+We can also view the files in /hbase/data/default/Employee
+______________________________________________________________________________________________________________________
+
+
+______________________________________________________________________________________________________________________
+
+UPDATE
+______________________________________________________________________________________________________________________
+
+hbase(main):004:0> scan 'Employee' , {COLUMNS=> ['Personal Data:Name' , 'Professional Data:Exp']}
+ROW                                        COLUMN+CELL                                                                                                                
+ 01                                        column=Personal Data:Name, timestamp=1553052729115, value=Rahul                                                            
+ 01                                        column=Professional Data:Exp, timestamp=1553088793475, value=5 YR                                                          
+ 02                                        column=Personal Data:Name, timestamp=1553052810683, value=Kritika                                                          
+ 02                                        column=Professional Data:Exp, timestamp=1553053295644, value=6 YR                                                          
+2 row(s) in 0.0460 seconds
+
+
+______________________________________________________________________________________________________________________
+
+DELETE
+______________________________________________________________________________________________________________________
+
+
+
+hbase(main):006:0> delete 'Employee', '01' ,'Personal Data:Name'
+
+______________________________________________________________________________________________________________________
+
+DROP
+______________________________________________________________________________________________________________________
+
+
+hbase(main):008:0> disable 'cars'
+0 row(s) in 2.9170 seconds
+
+hbase(main):009:0> drop 'cars'
+0 row(s) in 2.5440 seconds
+
+hbase(main):010:0> 
