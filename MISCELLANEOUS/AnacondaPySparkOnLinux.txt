@@ -1,0 +1,96 @@
+______________________________________________________________________________________________________________________
+STEPS TO INSTALL ANACONDA on LINUX
+______________________________________________________________________________________________________________________
+
+DOWNLOAD ANACONDA
+-----------------
+[cloudera@quickstart ~]$ cd Downloads/
+[cloudera@quickstart Downloads]$ ls
+Anaconda3-2018.12-Linux-x86_64.sh
+[cloudera@quickstart Downloads]$ ./Anaconda3-2018.12-Linux-x86_64.sh 
+
+
+AFTER INSTALLATION:
+------------------
+[cloudera@quickstart ~]$ vi .bashrc
+
+
+ENTER THE BELOW LINE, IN THE FILE
+---------------------------------
+export PATH="/home/cloudera/anaconda3/bin:$PATH"
+
+
+TO VERIFY
+---------
+[cloudera@quickstart ~]$ echo $PATH
+/home/cloudera/anaconda3/bin:/usr/local/firefox:/sbin:/usr/java/jdk1.7.0_67-cloudera/bin:
+/usr/local/apache-ant/apache-ant-1.9.2/bin:/usr/local/apache-maven/apache-maven-3.0.4/bin:/usr/local/bin:
+/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/cloudera/bin
+
+
+NOW: 
+---
+[cloudera@quickstart ~]$ jupyter notebook
+
+_______________________________________________________________________________________________________________________
+STEPS TO INSTALL PYSPARK on LINUX
+_______________________________________________________________________________________________________________________
+
+conda install -c conda-forge pyspark
+
+_______________________________________________________________________________________________________________________
+STEPS TO INSTALL JAVA on LINUX
+_______________________________________________________________________________________________________________________
+
+
+DOWNLOAD JDK (.rpm)
+-------------------
+[cloudera@quickstart Downloads]$ sudo rpm -ivh jdk-8u201-linux-x64.rpm
+
+
+AFTER INSTALLATION:
+------------------
+[cloudera@quickstart ~]$ vi .bashrc
+
+
+ENTER THE BELOW LINE, IN THE FILE
+---------------------------------
+JAVA_HOME="/usr/java/jdk1.8.0_201-amd64/"
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+TO VERIFY
+---------
+[cloudera@quickstart ~]$ echo $PATH
+/usr/java/jdk1.8.0_201-amd64//bin:/home/cloudera/anaconda3/bin:/usr/local/firefox:/sbin:
+/usr/java/jdk1.7.0_67-cloudera/bin:/usr/local/apache-ant/apache-ant-1.9.2/bin:
+/usr/local/apache-maven/apache-maven-3.0.4/bin:/usr/local/bin:/usr/bin:/bin:
+/usr/local/sbin:/usr/sbin:/sbin:/home/cloudera/bin
+[cloudera@quickstart ~]$ 
+
+______________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
