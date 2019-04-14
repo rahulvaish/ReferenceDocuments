@@ -6,6 +6,7 @@ docker rm -vf $(docker ps -a -q)
 To delete all the images,
 
 docker rmi -f $(docker images -a -q)
+
 Remember, you should remove all the containers before removing all the images from which those containers were created.
 _______________________________________________________________________________________________________________________
 
@@ -21,9 +22,14 @@ docker push rahulvaish/hellodocker
 
 docker run rahulvaish/hellodocker
 
+docker-machine ls
+
 docker run -p 8080:8080 rahulvaish/springbootdocker
 
 docker run -p 8080:8080 rahulvaish/springbootdocker-v2
 
+docker images
 
+docker ps
 
+docker stop <my_container>
