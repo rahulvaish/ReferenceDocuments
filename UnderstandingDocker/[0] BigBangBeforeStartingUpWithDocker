@@ -1,0 +1,6 @@
+Before we plan to start anything with Docker, we need a laptop/PC level setting-This setting is called "Virtualization", and we need to "Enable" it.
+
+This is done from BIOS. We need to check every option of BIOS (Different laptops/different navigations). Once we enable Virtualization, we will need to restart our computer, to bring the changes into effectivness. 
+
+
+Further, download Docker Toolbox, and launch its shell !
