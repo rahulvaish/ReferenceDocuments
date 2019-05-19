@@ -1,10 +1,8 @@
-To delete all containers including its volumes use,
-
+To delete all containers including its volumes use:
 docker rm -vf $(docker ps -a -q)
 
 
-To delete all the images,
-
+To delete all the images:
 docker rmi -f $(docker images -a -q)
 
 Remember, you should remove all the containers before removing all the images from which those containers were created.
@@ -24,12 +22,28 @@ docker run rahulvaish/hellodocker
 
 docker-machine ls
 
-docker run -p 8080:8080 rahulvaish/springbootdocker
+docker run -it --rm -d -p 8080:8080 rahulvaish/springbootdocker
 
-docker run -p 8080:8080 rahulvaish/springbootdocker-v2
+docker run -it --rm -d -p 8081:8080 rahulvaish/springbootdocker-v2
 
 docker images
 
+docker history <my_container_id>
+
 docker ps
 
-docker stop <my_container>
+docker stop <my_container_id>
+
+docker start <my_container_id>
+
+docker stats <my_container_id>
+
+docker rename <my_container_id> <new_name>
+
+docker rm <my_container_id>
+
+docker pause <my_container_id>
+
+docker unpause <my_container_id>
+
+
