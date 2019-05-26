@@ -1,12 +1,22 @@
 To delete all containers including its volumes use:
 docker rm -vf $(docker ps -a -q)
 
-
 To delete all the images:
 docker rmi -f $(docker images -a -q)
 
-Remember, you should remove all the containers before removing all the images from which those containers were created.
-_______________________________________________________________________________________________________________________
+NOTE: Remember, you should remove all the containers before removing
+all the images from which those containers were created.
+_____________________________________________________________________
+
+To garcefully terminate a container:
+docker stop <container_id>
+
+To forcefully remove a  container:
+docker rm -f <container_id>
+
+To abrubtly terminate a container:
+docker kill <container_id>
+_____________________________________________________________________
 
 docker build -t hellodocker .
 
@@ -40,7 +50,7 @@ docker stats <my_container_id>
 
 docker rename <my_container_id> <new_name>
 
-docker rm <my_container_id>
+docker rm -f <my_container_id>
 
 docker pause <my_container_id>
 
