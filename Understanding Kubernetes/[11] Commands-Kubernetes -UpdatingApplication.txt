@@ -1,0 +1,1 @@
+kubectl set image deployments/application4 application4=rahulvaish/flaskwebservicedockerkubectl rollout undo deployments/application4
