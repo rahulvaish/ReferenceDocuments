@@ -1,1 +1,0 @@
-kubectl get serviceskubectl expose deployment/application2 --type="NodePort" --port 8080kubectl describe servicesexport NODE_PORT=$(kubectl get services/application2 -o go-template='{{(index .spec.ports 0).nodePort}}')echo NODE_PORT=$NODE_PORTGet IP from ifconfig, and then IP:NODE_PORT/ on browser!!
