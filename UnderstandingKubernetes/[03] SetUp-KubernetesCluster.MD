@@ -1,6 +1,6 @@
 ### FIRST STEP:
 
-[1] Download this [VM](https://drive.google.com/open?id=1p8kBqbWW2sp3bV7DoTurr7pTwp4O43AG) and import it on WMWare </br>
+[1] Download this [VM](https://drive.google.com/open?id=1p8kBqbWW2sp3bV7DoTurr7pTwp4O43AG) and import it on VMWare </br>
 [2] Make a Full Clone of it. </br>
 [3] Consider one VM as master and another as node. </br>
 [4] VM Settings - Processors=2+2 | Memory=16GB </br>
