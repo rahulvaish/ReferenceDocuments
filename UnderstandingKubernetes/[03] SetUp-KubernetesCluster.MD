@@ -1,12 +1,18 @@
 ### FIRST STEP:
 
-[0] Download VMWare-15.X.X  </br>
-    Use any of the VMware Workstation 15.X.X Licence  </br>	
-##### - VG30H-2AX11-H88FQ-CQXGZ-M6AY4 </br>
-##### - CU7J2-4KG8J-489TY-X6XGX-MAUX2 </br>
-##### - FY780-64E90-0845Z-1DWQ9-XPRC0 </br>
-##### - UF312-07W82-H89XZ-7FPGE-XUH80 </br>
-##### - AA3DH-0PYD1-0803P-X4Z7V-PGHR4 </br>
+[0] Download VMWare-15.X.X Use any of the VMware Workstation 15.X.X Licence Keys </br>	
+- FU512-2DG1H-M85QZ-U7Z5T-PY8ZD  </br>
+- CU3MA-2LG1N-48EGQ-9GNGZ-QG0UD  </br>
+- GV7N2-DQZ00-4897Y-27ZNX-NV0TD  </br>
+- YZ718-4REEQ-08DHQ-JNYQC-ZQRD0  </br>
+- GZ3N0-6CX0L-H80UP-FPM59-NKAD4  </br>
+- YY31H-6EYEJ-480VZ-VXXZC-QF2E0  </br>
+- ZG51K-25FE1-H81ZP-95XGT-WV2C0  </br>
+- VG30H-2AX11-H88FQ-CQXGZ-M6AY4  </br>
+- CU7J2-4KG8J-489TY-X6XGX-MAUX2  </br>
+- FY780-64E90-0845Z-1DWQ9-XPRC0  </br>
+- UF312-07W82-H89XZ-7FPGE-XUH80  </br>
+- AA3DH-0PYD1-0803P-X4Z7V-PGHR4  </br>
 
 [1] Download this [VM](https://drive.google.com/open?id=1p8kBqbWW2sp3bV7DoTurr7pTwp4O43AG) and import it on VMWare </br>
 [2] Make a Full Clone of it. </br>
