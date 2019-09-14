@@ -1,6 +1,6 @@
 ### FIRST STEP:
 
-[0] Download **VMWare-15.X.X** Use any of the VMware Workstation 15.X.X Licence Keys </br>	
+[0] Download **VMWare-Workstation 15 PRO**(or latest). For VMware Workstation 15 PRO Licence Keys are:</br>	
 - YY31H-6EYEJ-480VZ-VXXZC-QF2E0  </br>
 - ZG51K-25FE1-H81ZP-95XGT-WV2C0  </br>
 - VG30H-2AX11-H88FQ-CQXGZ-M6AY4  </br>
@@ -10,13 +10,14 @@
 - AA3DH-0PYD1-0803P-X4Z7V-PGHR4  </br>
 
 [1] Download this [VM](https://drive.google.com/open?id=1p8kBqbWW2sp3bV7DoTurr7pTwp4O43AG) and import it on VMWare </br>
-[2] Make a Full Clone of it. </br>
+[2] Create a **Full** Clone of it. </br>
 [3] Consider one VM as master and another as node. </br>
 [4] VM Settings - Processors=2+2 | Memory=16GB </br>
-[5] Check Internet Connectivity on both the VMs. </br>
-[6] **VM Credentials:  <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:root <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:redhat**  <br>
+[5] Start both VMs, with credentials:  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:**root** <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:**redhat**  <br>
+[6] Check Internet Connectivity on both the VMs. </br>
+![image](https://user-images.githubusercontent.com/689226/64911891-1960cb80-d745-11e9-8170-46402854b942.png)
 
 <hr>
 
