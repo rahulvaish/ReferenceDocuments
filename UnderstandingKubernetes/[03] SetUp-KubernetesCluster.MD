@@ -5,6 +5,9 @@
 [3] Consider one VM as master and another as node. </br>
 [4] VM Settings - Processors=2+2 | Memory=16GB </br>
 [5] Check Internet Connectivity on both the VMs. </br>
+[6] **VM Credentials:  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:root <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:redhat**  <br>
 
 <hr>
 
