@@ -55,7 +55,8 @@
 
 
 [1] yum clean all </br>
-[2] yum install kubeadm -y </br>
+[2] rm -rf /var/cache/yum
+[3] yum install kubeadm -y </br>
 
 ##### If you get error for bridge: </br>
     echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
@@ -63,9 +64,9 @@
     sysctl net.bridge.bridge-nf-call-ip6tables=1 
     sysctl -w net.ipv4.ip_forward=1 
  
-[3] systemctl start kubelet </br>
-[4] systemctl enable kubelet </br>
-[5] Run the JOIN command | From Master Initiation Logs </br>
-[6] Navigate to Master Node and check 'kubectl get nodes' </br>
+[4] systemctl start kubelet </br>
+[5] systemctl enable kubelet </br>
+[6] Run the JOIN command | From Master Initiation Logs </br>
+[7] Navigate to Master Node and check 'kubectl get nodes' </br>
 
 <hr>
