@@ -1,11 +1,6 @@
 ### FIRST STEP:
 
-[0] Download VMWare-15.X.X Use any of the VMware Workstation 15.X.X Licence Keys </br>	
-- FU512-2DG1H-M85QZ-U7Z5T-PY8ZD  </br>
-- CU3MA-2LG1N-48EGQ-9GNGZ-QG0UD  </br>
-- GV7N2-DQZ00-4897Y-27ZNX-NV0TD  </br>
-- YZ718-4REEQ-08DHQ-JNYQC-ZQRD0  </br>
-- GZ3N0-6CX0L-H80UP-FPM59-NKAD4  </br>
+[0] Download **VMWare-15.X.X** Use any of the VMware Workstation 15.X.X Licence Keys </br>	
 - YY31H-6EYEJ-480VZ-VXXZC-QF2E0  </br>
 - ZG51K-25FE1-H81ZP-95XGT-WV2C0  </br>
 - VG30H-2AX11-H88FQ-CQXGZ-M6AY4  </br>
