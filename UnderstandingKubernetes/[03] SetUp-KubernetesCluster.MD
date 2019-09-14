@@ -1,12 +1,12 @@
 ### FIRST STEP:
 
 [0] Download VMWare-15.X.X  </br>
-Use any of the VMware Workstation 15.X.X Licence  </br>	
-##### VG30H-2AX11-H88FQ-CQXGZ-M6AY4 </br>
-##### CU7J2-4KG8J-489TY-X6XGX-MAUX2 </br>
-##### FY780-64E90-0845Z-1DWQ9-XPRC0 </br>
-##### UF312-07W82-H89XZ-7FPGE-XUH80 </br>
-##### AA3DH-0PYD1-0803P-X4Z7V-PGHR4 </br>
+    Use any of the VMware Workstation 15.X.X Licence  </br>	
+##### - VG30H-2AX11-H88FQ-CQXGZ-M6AY4 </br>
+##### - CU7J2-4KG8J-489TY-X6XGX-MAUX2 </br>
+##### - FY780-64E90-0845Z-1DWQ9-XPRC0 </br>
+##### - UF312-07W82-H89XZ-7FPGE-XUH80 </br>
+##### - AA3DH-0PYD1-0803P-X4Z7V-PGHR4 </br>
 
 [1] Download this [VM](https://drive.google.com/open?id=1p8kBqbWW2sp3bV7DoTurr7pTwp4O43AG) and import it on VMWare </br>
 [2] Make a Full Clone of it. </br>
