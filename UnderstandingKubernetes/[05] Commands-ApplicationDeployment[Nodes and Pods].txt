@@ -33,7 +33,8 @@ spec:
 [10] kubectl delete deployment application2
 [11] kubectl get pods
 [12] kubectl describe pod <podId>
-[13] kubectl delete pod <podId>
+[13] kubectl delete pod <podId> 
+     For forceful deletion of pod: kubectl delete pods <podID> --grace-period=0 --force
 [14] kubectl get namespaces
 
 To create a yml for namespace creation: 
