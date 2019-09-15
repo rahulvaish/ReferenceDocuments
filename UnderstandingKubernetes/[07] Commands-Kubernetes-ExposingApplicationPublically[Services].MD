@@ -6,3 +6,29 @@
 [4] export NODE_PORT=$(kubectl get services/application2 -o go-template='{{(index .spec.ports 0).nodePort}}') </br>
 [5] echo NODE_PORT=$NODE_PORT </br>
 [6] Get IP from ifconfig, and then use that IP:NODE_PORT/ on WebBrowser (VM/outside VM) </br>
+
+##### To create a **bare minimal** yml for exposing app as service [Outside Kubernetes cluster]: 
+[7] vi appservicefromyml.yml
+
+    apiVersion: v1
+    kind: Service
+    metadata:
+      labels:
+        app: appdeploymentfromyml
+      name: appdeploymentfromyml
+      namespace: default
+    spec:
+      ports:
+      - nodePort: 31746
+        port: 8080
+        protocol: TCP
+        targetPort: 8080
+      selector:
+        app: appdeploymentfromyml
+      sessionAffinity: None
+      type: NodePort
+    status:
+      loadBalancer: {}
+  
+[8] kubectl create -f appservicefromyml.yml <br>
+[6] Get IP from ifconfig, and then use that IP:31746/ on WebBrowser (VM/outside VM) </br>
