@@ -31,4 +31,4 @@
       loadBalancer: {}
   
 [8] kubectl create -f appservicefromyml.yml <br>
-[6] Get IP from ifconfig, and then use that IP:31746/ on WebBrowser (VM/outside VM) </br>
+[9] Get IP from ifconfig, and then use that IP:31746/ on WebBrowser (VM/outside VM) </br>
