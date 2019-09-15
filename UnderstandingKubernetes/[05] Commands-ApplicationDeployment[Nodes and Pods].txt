@@ -4,7 +4,7 @@ Open the Terminal and Execute the below commands:
 [2] kubectl describe node master.example.com
 [3] kubectl run application2 --image=rahulvaish/springbootdocker --port=8080
 
-To create a yml for app deplyoment:  
+To create a **bare minimal** yml for app deployment:  
 [4] vi appdeploymentfromyml.yml
 
 apiVersion: extensions/v1beta1
@@ -25,7 +25,7 @@ spec:
         - containerPort: 8080
 
 
-[5] kubectl create -f appdeploymentfromyml.yml
+[5] kubectl create -f appdeploymentfromyml.yml <br>
 [6] kubectl get deployments [You will find one deployment as 'application2' and another as 'appdeploymentfromyml']
 [7] kubectl get pods -o wide [To determine, in which node this deployment happened]
 [8] kubectl describe deployment application2
