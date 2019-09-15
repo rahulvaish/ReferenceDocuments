@@ -5,4 +5,4 @@
 [3] kubectl describe services </br>
 [4] export NODE_PORT=$(kubectl get services/application2 -o go-template='{{(index .spec.ports 0).nodePort}}') </br>
 [5] echo NODE_PORT=$NODE_PORT </br>
-[6] Get IP from ifconfig, and then use that IP:NODE_PORT/ on Web Browser!! </br>
+[6] Get IP from ifconfig, and then use that IP:NODE_PORT/ on WebBrowser (VM/outside VM) </br>
