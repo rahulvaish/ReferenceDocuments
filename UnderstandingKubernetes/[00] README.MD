@@ -3,4 +3,6 @@
 
 <br>
 
-The experiments in the series have been carried out with SpringBoot App/s on K8.
+## NOTE: 
+- The experiments in the series have been carried out with SpringBoot App/s on K8.
+- In this series: First comes Tutorial-Theory, then comes, the commands used for execution.
