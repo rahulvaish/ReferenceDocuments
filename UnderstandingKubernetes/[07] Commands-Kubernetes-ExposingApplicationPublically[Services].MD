@@ -8,7 +8,7 @@
 [6] Get IP from ifconfig, and then use that IP:NODE_PORT/ on WebBrowser (VM/outside VM) </br>
 
 ##### To create a **bare minimal** yml for exposing app as service [Outside Kubernetes cluster]: 
-[7] vi appservicefromyml.yml
+[1] vi appservicefromyml.yml
 
     apiVersion: v1
     kind: Service
@@ -30,5 +30,5 @@
     status:
       loadBalancer: {}
   
-[8] kubectl create -f appservicefromyml.yml <br>
-[9] Get IP from ifconfig, and then use that IP:31746/ on WebBrowser (VM/outside VM) </br>
+[2] kubectl create -f appservicefromyml.yml <br>
+[3] Get IP from ifconfig, and then use that IP:31746/ on WebBrowser (VM/outside VM) </br>
