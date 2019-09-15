@@ -4,7 +4,7 @@ Open the Terminal and Execute the below commands:
 [2] kubectl describe node master.example.com
 [3] kubectl run application2 --image=rahulvaish/springbootdocker --port=8080
 
-To create a **bare minimal** yml for app deployment:  
+To create a bare minimal yml for app deployment:  
 [4] vi appdeploymentfromyml.yml
 
 apiVersion: extensions/v1beta1
