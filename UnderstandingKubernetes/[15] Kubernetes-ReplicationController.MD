@@ -1,4 +1,4 @@
-#### Replication Controller is one of the key features of Kubernetes, which is responsible for managing the pod lifecycle. It is responsible for making sure that the specified number of pod replicas are running at any point of time. RCs are  architecturally different from 'DEPLOYMENT', despite the end result is same. 
+### Replication Controller is one of the key features of Kubernetes, which is responsible for managing the pod lifecycle. It is responsible for making sure that the specified number of pod replicas are running at any point of time. RCs are  architecturally different from 'DEPLOYMENT', despite the end result is same. 
 
 
 ##### STEP#1: Prepare a YML to create Replication Controller
