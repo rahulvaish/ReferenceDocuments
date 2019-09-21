@@ -24,4 +24,4 @@ vi secret.yml
 kubectl apply -f secret.yml
 ```
 
-##### STEP#3: Refer [this example](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B16%5D%20KUBERNETES-MySQL.MD) to understand how secrets can be associated with deployments.
+##### STEP#3: Refer [this example](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B16%5D%20Kubernetes-MySQL.MD) to understand how secrets can be associated with deployments.
