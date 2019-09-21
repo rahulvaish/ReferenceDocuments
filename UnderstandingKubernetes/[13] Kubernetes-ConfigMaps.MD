@@ -1,4 +1,4 @@
-##### ConfigMaps are most preferred way of Putting Environmental Variables.
+#### ConfigMaps are most preferred way of Putting Environmental Variables.
 
 ##### Step#1: Prepare a YML to configure ConfigMap
 
