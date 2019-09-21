@@ -8,6 +8,9 @@ echo -n "my-super-secret-password" | base64
 
 ##### STEP#2:  Prepare a YML to create secret
 
+```
+vi secret.yml
+```
 
     apiVersion: v1
     kind: Secret
@@ -17,5 +20,9 @@ echo -n "my-super-secret-password" | base64
     data:
       ROOT_PASSWORD: c3VwZXItc2VjcmV0LXBhc3N3b3JkCg==
 
+
+```
+kubectl apply -f secret.yml
+```
 
 ##### STEP#3:  Now we can refer the created secret (mysql-secrets) in your 'deployment' yml. 
