@@ -3,6 +3,10 @@
 
 ##### STEP#1: Prepare a YML to create Replication Controller
 
+```
+vi replicationcontroller.yml
+```
+
     apiVersion: v1
     kind: ReplicationController        
     metadata:
@@ -20,7 +24,15 @@
           - name: kubia                
             image: rahulvaish/springbootdocker
 
+```
+kubectl appy -f replicationcontroller.yml
+```
+
 ##### STEP#2: Prepare a YML to create Replication Controller's Service
+
+```
+vi replicationcontrollerservice.yml
+```
 
     apiVersion: v1
     kind: Service
@@ -43,3 +55,6 @@
       loadBalancer: {}
 
 
+```
+kubectl appy -f replicationcontrollerservice.yml
+```
