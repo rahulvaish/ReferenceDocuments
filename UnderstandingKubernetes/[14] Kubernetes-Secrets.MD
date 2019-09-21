@@ -5,7 +5,6 @@
 echo -n "my-super-secret-password" | base64
 ```
 </br>
-
 ##### STEP#2:  Prepare a YML to create secret
 
 
