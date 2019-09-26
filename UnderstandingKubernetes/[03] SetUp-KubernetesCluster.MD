@@ -7,13 +7,13 @@
 - CU7J2-4KG8J-489TY-X6XGX-MAUX2  </br>
 
 [1] Download this [VM](https://drive.google.com/open?id=1p8kBqbWW2sp3bV7DoTurr7pTwp4O43AG) and import it on VMWare </br>
-[2] Create a **Full** Clone of it. </br>
-[3] Consider one VM as master and another as node. </br>
+[2] Create **Full Clones** of it. </br>
+[3] We can consider one VM as master and rest as worker/slave nodes. </br>
 [4] VM Settings: Number of Processors=2 | Number of Cores per Processor=2 | Memory=16GB </br>
-[5] Start both VMs, with credentials:  <br>
+[5] Start all VMs, with credentials:  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:**root** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:**redhat**  <br>
-[6] Check Internet Connectivity on both the VMs. </br>
+[6] Check Internet Connectivity on all the VMs. </br>
 ![image](https://user-images.githubusercontent.com/689226/64911891-1960cb80-d745-11e9-8170-46402854b942.png)
 
 <hr>
