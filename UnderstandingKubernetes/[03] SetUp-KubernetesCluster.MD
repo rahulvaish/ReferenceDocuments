@@ -9,7 +9,7 @@
 [1] Download this [VM](https://drive.google.com/open?id=1p8kBqbWW2sp3bV7DoTurr7pTwp4O43AG) and import it on VMWare </br>
 [2] Create a **Full** Clone of it. </br>
 [3] Consider one VM as master and another as node. </br>
-[4] VM Settings - Processors=2+2 | Memory=16GB </br>
+[4] VM Settings: Number of Processors=2 | Number of Cores per Processor=2 | Memory=16GB </br>
 [5] Start both VMs, with credentials:  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username:**root** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:**redhat**  <br>
@@ -53,7 +53,6 @@
     [3] Launch new Terminal. 
     [4] Check if the prompt is root@node1
 
-
 [1] yum clean all </br>
 [2] rm -rf /var/cache/yum
 [3] yum install kubeadm -y </br>
@@ -66,7 +65,8 @@
  
 [4] systemctl start kubelet </br>
 [5] systemctl enable kubelet </br>
-[6] Run the JOIN command | From Master Initiation Logs </br>
+[6] Run the JOIN command [**From Master Initiation Logs**] </br>
+    In case it's lost, execute: kubeadm token create --print-join-command   </br>
 [7] Navigate to Master Node and check 'kubectl get nodes' </br>
 
 <hr>
