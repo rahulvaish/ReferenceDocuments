@@ -36,20 +36,20 @@ name: metrics-server
 ```
 ##### STEP#4: Make a Deployment:
 ```
-kubectl run application --image=rahulvaish/springbootdocker --port=8080
-```
-##### STEP#5: Edit the Deployment: Introduce a resource section. To Test, lower values has beeen assigned.
-```
-kubectl edit deployment application 
-
-
-…
-…
-…
- containers:
-      - image: rahulvaish/springbootdocker
-        imagePullPolicy: Always
-        name: application
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: appdeploymentfromyml
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: appdeploymentfromyml
+    spec:
+      containers:
+      - name: appdeploymentfromyml
+        image: rahulvaish/springbootdocker
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -58,57 +58,47 @@ kubectl edit deployment application
             cpu: 100m
           requests:
             cpu: 100m
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-…
-…
-…
-…
+            
 ```
 ##### STEP#6: Expose the Deployment as a Service:
 ```
-kubectl expose deployment/application --type="NodePort" --port 8080
-export NODE_PORT=$(kubectl get services/application -o go-template='{{(index .spec.ports 0).nodePort}}')
-echo NODE_PORT=$NODE_PORT
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: appdeploymentfromyml
+  name: appdeploymentfromyml
+  namespace: default
+spec:
+  ports:
+  - nodePort: 31746
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: appdeploymentfromyml
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
 ```
-##### STEP#7: Issue Autoscaling Command:
+##### STEP#7: Create Autoscaling YML:
 ```
-kubectl autoscale deployment application --min=1 --max=10 --cpu-percent=20
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: appdeploymentfromyml
+spec:
+  maxReplicas: 5
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: appdeploymentfromyml
+  targetCPUUtilizationPercentage: 20
 ```
 ##### STEP#8: Test using *siege* utility:
 siege -q -c 10 -t 2m http://localhost:31635/
 
 <hr>
 
-###### The below setup aims to test HPA on Memory utilization. 
-
-
-```
-…
-…
-…
- containers:
-      - image: rahulvaish/springbootdocker
-        imagePullPolicy: Always
-        name: application
-        ports:
-        - containerPort: 8080
-          protocol: TCP
-        resources:
-          limits:
-            memory: 500Mi
-          requests:
-            memory: 50Mi
-            
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-…
-…
-…
-…
-
-```
