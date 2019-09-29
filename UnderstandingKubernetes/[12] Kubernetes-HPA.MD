@@ -98,7 +98,9 @@ spec:
   targetCPUUtilizationPercentage: 20
 ```
 ##### STEP#8: Test using *siege* utility:
-siege -q -c 10 -t 2m http://localhost:31635/
+siege -q -c 10 -t 2m http://localhost:31746/
+
+![image](https://user-images.githubusercontent.com/689226/65833314-931fba00-e2ec-11e9-8d29-9a5f1a572ffc.png)
 
 <hr>
 
