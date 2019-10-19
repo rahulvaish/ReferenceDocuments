@@ -9,4 +9,4 @@
 #### To execute the same, with *Data Persistence*:
 
 docker run --name mysql -d -p 3306:3306 -e MYSQL_DATABASE=dev -e MYSQL_ROOT_PASSWORD=root -v /Users/rvaish/mysqlbackup:/var/lib/mysql/  mysql
-
+###### NOTE: Now if the Container is killed / Image is removed; on re-instantiation (on same volume) the data is not lost!
