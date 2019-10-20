@@ -1,4 +1,4 @@
-##### ReplicaSets is a K8 Controller. It is one of the key features, which is responsible for managing the pod lifecycle that is- responsible for making sure that the specified number of pod replicas are running at any point of time. NOTE: RSs can be manually created (as below) or else it gets automatically into action during 'deployment'.
+##### ReplicaSet is a K8 Controller. It is one of the key features, which is responsible for managing the pod lifecycle that is- it makes sure that the specified number of pod replicas are running at any point of time. NOTE: RSs can be manually created (as below) or else it gets automatically created as as part of 'Deployment'.
 
 ##### STEP#1: Prepare a YML to create ReplicaSets:
 
