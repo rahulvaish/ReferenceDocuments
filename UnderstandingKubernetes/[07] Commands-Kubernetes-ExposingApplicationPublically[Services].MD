@@ -21,7 +21,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - nodePort: 31743
+  - nodePort: 31746
     port: 8080
     protocol: TCP
     name: http
