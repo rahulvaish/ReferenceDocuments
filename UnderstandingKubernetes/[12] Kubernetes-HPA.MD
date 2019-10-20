@@ -1,7 +1,7 @@
 ### HPA - Horizontal Pod Scaling on K8
 ###### The below setup aims to test HPA on CPU utilization. 
 
-##### STEP#1: Setup a Metric server: </br>
+##### STEP#1: Setup Metric server: </br>
   - git clone https://github.com/kubernetes-incubator/metrics-server.git </br>
   - Navigate till **metrics-server/deploy/1.8+/** </br>
   - Introduce the below section in **metrics-server-deployment.yaml** </br> </br>
@@ -40,8 +40,13 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: appdeploymentfromyml
+  labels:
+    app: appdeploymentfromyml
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: appdeploymentfromyml
   template:
     metadata:
       labels:
@@ -66,28 +71,27 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: appdeploymentfromyml
-  name: appdeploymentfromyml
+    app: appservicefromyml
+  name: appservicefromyml
   namespace: default
 spec:
+  type: NodePort
   ports:
   - nodePort: 31746
     port: 8080
     protocol: TCP
+    name: http
     targetPort: 8080
   selector:
     app: appdeploymentfromyml
-  sessionAffinity: None
-  type: NodePort
-status:
-  loadBalancer: {}
+
 ```
 ##### STEP#7: Create Autoscaling YML:
 ```
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: appdeploymentfromyml
+  name: apphpafromyml
 spec:
   maxReplicas: 5
   minReplicas: 1
@@ -96,6 +100,7 @@ spec:
     kind: Deployment
     name: appdeploymentfromyml
   targetCPUUtilizationPercentage: 20
+  
 ```
 ##### STEP#8: Test using *siege* utility:
 siege -q -c 10 -t 2m http://localhost:31746/
