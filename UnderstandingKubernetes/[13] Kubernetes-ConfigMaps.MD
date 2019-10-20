@@ -1,20 +1,20 @@
 ### ConfigMaps are most preferred way of Putting Environmental Variables.
 
 ##### STEP#1: Prepare a YML to configure ConfigMap
-
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: my-env
-    data:
-      CONFIGMAP_VARIABLE1: test1
-      CONFIGMAP_VARIABLE2: test2
-      CONFIGMAP_VARIABLE3: test3
-      CONFIGMAP_VARIABLE4: test4
-
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-env
+data:
+  CONFIGMAP_VARIABLE1: test1
+  CONFIGMAP_VARIABLE2: test2
+  CONFIGMAP_VARIABLE3: test3
+  CONFIGMAP_VARIABLE4: test4    
+```
 ##### STEP#2: Refer [SpringBoot Application](https://github.com/rahulvaish/Docker-Java/tree/SpringBootKubernetesConfigMaps). This project on K8 deployment will pick the values from the ConfigMap.
 
-##### STEP#3: Deploying SpringBoot Application.
+##### STEP#3: The above SpringBoot Application has been dockerized and uploaded on [DockerHub](https://hub.docker.com/r/rahulvaish/springbootkubernetesconfigmaps). Now deploying the application on K8:
 
 ```
 apiVersion: extensions/v1beta1
@@ -43,7 +43,7 @@ spec:
             name: my-env
 
 ```
-##### STEP#4: Exposing SpringBootDocker Application as a Service:
+##### STEP#4: Exposing the application as a Service:
 
 
 ```
