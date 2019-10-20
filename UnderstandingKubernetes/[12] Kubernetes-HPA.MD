@@ -36,6 +36,9 @@ name: metrics-server
 ```
 ##### STEP#4: Make a Deployment:
 ```
+vi hpadeployment.yml
+```
+```
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -65,7 +68,14 @@ spec:
             cpu: 100m
             
 ```
+```
+kubectl apply -f hpadeployment.yml
+```
 ##### STEP#6: Expose the Deployment as a Service:
+
+```
+vi hpaservice.yml
+```
 ```
 apiVersion: v1
 kind: Service
@@ -86,7 +96,14 @@ spec:
     app: appdeploymentfromyml
 
 ```
+```
+kubectl apply -f hpaservice.yml
+```
 ##### STEP#7: Create Autoscaling YML:
+```
+vi hpa.yml
+```
+
 ```
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -101,6 +118,9 @@ spec:
     name: appdeploymentfromyml
   targetCPUUtilizationPercentage: 20
   
+```
+```
+kubectl apply -f hpa.yml
 ```
 ##### STEP#8: Test using *siege* utility:
 siege -q -c 10 -t 2m http://localhost:31746/
