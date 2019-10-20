@@ -10,25 +10,25 @@
 ##### To create a **bare minimal** yml for exposing app as service [Outside Kubernetes cluster]: 
 [1] vi appservicefromyml.yml
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-      labels:
-        app: appdeploymentfromyml
-      name: appdeploymentfromyml
-      namespace: default
-    spec:
-      ports:
-      - nodePort: 31746
-        port: 8080
-        protocol: TCP
-        targetPort: 8080
-      selector:
-        app: appdeploymentfromyml
-      sessionAffinity: None
-      type: NodePort
-    status:
-      loadBalancer: {}
+```
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: appservicefromyml
+  name: appservicefromyml
+  namespace: default
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 31743
+    port: 8080
+    protocol: TCP
+    name: http
+    targetPort: 8080
+  selector:
+    app: appdeploymentfromyml
+```
   
 [2] kubectl create -f appservicefromyml.yml <br>
 [3] Get IP from ifconfig, and then use that IP:31746/ on WebBrowser (VM/outside VM) </br>
