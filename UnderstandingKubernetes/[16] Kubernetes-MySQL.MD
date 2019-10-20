@@ -127,10 +127,13 @@ status:
 ```
 kubectl apply -f mysqlservice.yml
 ```
+##### STEP#5: Connect the running MySQL from DBeaver: 
   
-  
-  
-  
+![image](https://user-images.githubusercontent.com/689226/67160509-35bcdd00-f36f-11e9-8623-14655badd4e7.png)
+ 
+###### To investigate inside the Pod:
+
+![image](https://user-images.githubusercontent.com/689226/67160742-71f13d00-f371-11e9-8acd-028a0d29ea03.png)
   
   
   
