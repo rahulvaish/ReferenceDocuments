@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: appdeploymentusingcm
-        image: rahulvaish/springbootdocker
+        image: rahulvaish/springbootkubernetesconfigmaps
         ports:
         - containerPort: 8080
         envFrom:
