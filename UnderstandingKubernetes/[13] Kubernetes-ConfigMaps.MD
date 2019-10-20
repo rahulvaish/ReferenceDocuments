@@ -15,6 +15,9 @@ data:
 ##### STEP#2: Refer [SpringBoot Application](https://github.com/rahulvaish/Docker-Java/tree/SpringBootKubernetesConfigMaps). This project on K8 deployment will pick the values from the ConfigMap.
 
 ##### STEP#3: The above SpringBoot Application has been dockerized and uploaded on [DockerHub](https://hub.docker.com/r/rahulvaish/springbootkubernetesconfigmaps). Now deploying the application on K8:
+```
+vi cmdeployment.yml
+```
 
 ```
 apiVersion: extensions/v1beta1
@@ -43,8 +46,13 @@ spec:
             name: my-env
 
 ```
+```
+kubectl apply -f cmdeployment.yml
+```
 ##### STEP#4: Exposing the application as a Service:
-
+```
+vi cmservice.yml
+```
 
 ```
 apiVersion: v1
@@ -65,7 +73,9 @@ spec:
   selector:
     app: appdeploymentusingcm
 ```
-  
+```
+kubectl apply -f cmservice.yml
+```  
 
   
   
