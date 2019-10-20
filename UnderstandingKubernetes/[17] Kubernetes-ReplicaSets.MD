@@ -58,6 +58,5 @@ spec:
 kubectl apply -f replicasetsservice.yml
 ```
 ##### STEP#3: Test RS:
-
-![image](https://user-images.githubusercontent.com/689226/67162160-1fb71880-f37f-11e9-81d6-c8a8c5f22ca7.png)
+![image](https://user-images.githubusercontent.com/689226/67162357-d962b900-f380-11e9-965e-8f36e0b96bb7.png)
 
