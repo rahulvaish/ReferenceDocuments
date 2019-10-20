@@ -16,49 +16,57 @@
 
 ##### STEP#3: Deploying SpringBoot Application.
 
-    apiVersion: extensions/v1beta1
-    kind: Deployment
-    metadata:
-      name: appdeploymentusingcm
-    spec:
-      replicas: 1
-      template:
-        metadata:
-          labels:
-            app: appdeploymentusingcm
-        spec:
-          containers:
-          - name: appdeploymentusingcm
-            image: rahulvaish/springbootkubernetesconfigmaps
-            ports:
-            - containerPort: 8080
-            envFrom:
-            - configMapRef:
-                name: my-env
-
-##### STEP#4: Exposing SpringBoot Application as a service:
-
-
-    apiVersion: v1
-    kind: Service
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: appdeploymentusingcm
+  labels:
+    app: appdeploymentusingcm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appdeploymentusingcm
+  template:
     metadata:
       labels:
         app: appdeploymentusingcm
-      name: appdeploymentusingcm
-      namespace: default
     spec:
-      ports:
-      - nodePort: 31736
-        port: 8080
-        protocol: TCP
-        targetPort: 8080
-      selector:
-        app: appdeploymentusingcm
-      sessionAffinity: None
-      type: NodePort
-    status:
-      loadBalancer: {}
+      containers:
+      - name: appdeploymentusingcm
+        image: rahulvaish/springbootdocker
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: my-env
+
+```
+##### STEP#4: Exposing SpringBootDocker Application as a Service:
+
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: appserviceusingcm
+  name: appserviceusingcm
+  namespace: default
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 31746
+    port: 8080
+    protocol: TCP
+    name: http
+    targetPort: 8080
+  selector:
+    app: appdeploymentusingcm
+```
   
+
   
   
   
