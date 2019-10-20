@@ -7,23 +7,30 @@
 ##### To create a bare minimal yml for app deployment:  </br>
 [4] vi appdeploymentfromyml.yml
 
-    apiVersion: extensions/v1beta1
-    kind: Deployment
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: appdeploymentfromyml
+  labels:
+    app: appdeploymentfromyml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appdeploymentfromyml
+  template:
     metadata:
-      name: appdeploymentfromyml
+      labels:
+        app: appdeploymentfromyml
     spec:
-      replicas: 1
-      template:
-        metadata:
-          labels:
-            app: appdeploymentfromyml
-        spec:
-          containers:
-          - name: appdeploymentfromyml
-            image: rahulvaish/springbootdocker
-            ports:
-            - containerPort: 8080
-
+      containers:
+      - name: appdeploymentfromyml
+        image: rahulvaish/springbootdocker
+        ports:
+        - containerPort: 8080
+        
+```
 
 [5] kubectl create -f appdeploymentfromyml.yml  </br>
 [6] kubectl get deployments [You will find one deployment as 'application2' and another as 'appdeploymentfromyml'] </br>
