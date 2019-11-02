@@ -49,7 +49,7 @@ pods        0     2
 bash-3.2$ 
 ____________________________________________________________________________________________________
 ```
-##### STEP#4: Create a Deployment
+##### STEP#4: Create a Deployment:
 ```
 apiVersion: extensions/v1beta1
 kind: Deployment
