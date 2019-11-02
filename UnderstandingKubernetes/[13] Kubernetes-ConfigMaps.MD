@@ -1,5 +1,5 @@
 ### ConfigMaps in K8
-ConfigMaps are most preferred way of setting Environmental Variables, which K8 deployments can leverage.
+###### ConfigMaps are most preferred way of setting Environmental Variables, which K8 deployments can leverage. The below guide aims to setup and understand configMap on Kubernetes.
 
 ##### STEP#1: Prepare a YML to configure ConfigMap
 ```
