@@ -127,4 +127,6 @@ spec:
 ```
 kubectl apply -f replicasetsmlmeservice.yml
 ```
+![image](https://user-images.githubusercontent.com/45539698/68065382-75f86400-fd4e-11e9-962e-7b647b51d22f.png)
+
 
