@@ -1,5 +1,5 @@
 ### ResourceQuota in K8
-###### ResourceQuota is a practice to draw boundaries on Namespaces (in a cluster).The below guide aims to setup and understand ResourceQuota in Kubernetes.
+###### ResourceQuota is a practice to draw boundaries on Namespaces (in a cluster), so that the cpu/memory.K8 resources can be properly managed. The below guide aims to setup and understand ResourceQuota in Kubernetes.
 
 ##### STEP#1: Create a Namespace:
 ```
