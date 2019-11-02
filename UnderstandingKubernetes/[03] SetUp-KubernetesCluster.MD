@@ -54,7 +54,7 @@
     [4] Check if the prompt is root@node1
 
 [1] yum clean all </br>
-[2] rm -rf /var/cache/yum
+[2] rm -rf /var/cache/yum </br>
 [3] yum install kubeadm -y </br>
 
 ##### If you get error for bridge: </br>
@@ -65,8 +65,9 @@
  
 [4] systemctl start kubelet </br>
 [5] systemctl enable kubelet </br>
-[6] Run the JOIN command [**From Master Initiation Logs**] </br>
-    In case it's lost, execute: kubeadm token create --print-join-command   </br>
+[6] Run the JOIN command [**From the Master Initiation Logs**] </br> 
+   - ###### In case, your the JOIN command is lost, execute: ``` kubeadm token create --print-join-command ```
+   - ###### In case, the installation is not for the first time, and you enconter hurdles to JOIN Slave with Master. Execute:  ```kubeadm reset --force``` and then re-try joining Slave with Master. </br>
 [7] Navigate to Master Node and check 'kubectl get nodes' </br>
 
 <hr>
