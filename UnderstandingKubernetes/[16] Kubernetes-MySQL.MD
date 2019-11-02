@@ -1,4 +1,5 @@
 ### MySQL on K8
+###### The below guide aims to setup and understand MySQL on Kubernetes.
 
 ##### STEP#1: Get a password for your plain text: 
 
