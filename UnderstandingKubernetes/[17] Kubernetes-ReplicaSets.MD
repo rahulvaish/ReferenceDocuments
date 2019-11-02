@@ -1,5 +1,5 @@
 ### ReplicaSets in K8
-ReplicaSets are Kubernetes Controller, which are responsible for managing the pod lifecycle. This means- it makes sure that the specified number of pod replicas are up & running at any point of time. NOTE: RSs can be manually created (as below) or else it gets automatically created as as part of 'Deployment'. RSs uses ```SET BASED SELECTOR``` unlike ReplicationControllers(https://github.com/rahulvaish/ReferenceDocuments/edit/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQUALITY BASED SELECTOR```.  
+ReplicaSets are Kubernetes Controller, which are responsible for managing the pod lifecycle. This means- it makes sure that the specified number of pod replicas are up & running at any point of time. NOTE: RSs can be manually created (as below) or else it gets automatically created as as part of 'Deployment'. RSs uses ```SET BASED SELECTOR``` unlike [ReplicationControllers](https://github.com/rahulvaish/ReferenceDocuments/edit/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQUALITY BASED SELECTOR```.  
 
 ##### STEP#1: Prepare a YML to create ReplicaSet:
 
