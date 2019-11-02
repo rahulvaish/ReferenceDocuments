@@ -1,5 +1,5 @@
 ### ResourceQuota in K8
-ResourceQuota is a practice to draw boundaries on Namespaces (in a cluster).
+###### ResourceQuota is a practice to draw boundaries on Namespaces (in a cluster).The below guide aims to setup and understand ResourceQuota in Kubernetes.
 
 ##### STEP#1: Create a Namespace:
 ```
@@ -37,7 +37,7 @@ spec:
 ```
 kubectl apply -f podsresourcequota.yml
 ```
-###### Checking:
+###### Checking: Everything looks good!
 ```
 ____________________________________________________________________________________________________
 bash-3.2$ kubectl -n rahulvaishnamespace describe quota podsresourcequota
@@ -74,7 +74,7 @@ spec:
         ports:
         - containerPort: 8080
 ```
-###### Checking: Replicas=3 | RQ caps on 2.  
+###### Checking: We have Replicas=3 and RQ caps maximum on 2 Pods. The 3rd pod could not be created due to lack of resources. 
 ```
 _______________________________________________________________________________________________________________________________________________________________________
 bash-3.2$ kubectl -n rahulvaishnamespace describe quota podsresourcequota
@@ -83,40 +83,25 @@ Namespace:  rahulvaishnamespace
 Resource    Used  Hard
 --------    ----  ----
 pods        0     2
+
+
 bash-3.2$ kubectl apply -f d.yml
 deployment.extensions/a created
+
+
 bash-3.2$ kubectl -n rahulvaishnamespace describe quota podsresourcequota
 Name:       podsresourcequota
 Namespace:  rahulvaishnamespace
 Resource    Used  Hard
 --------    ----  ----
 pods        2     2
-bash-3.2$ kubectl -n rahulvaishnamespace describe deployment a
-Name:                   a
-Namespace:              rahulvaishnamespace
-CreationTimestamp:      Wed, 30 Oct 2019 16:54:24 +0530
-Labels:                 app=b
-Annotations:            deployment.kubernetes.io/revision: 1
-                        kubectl.kubernetes.io/last-applied-configuration:
-                          {"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"b"},"name":"a","namespace":"rahulvais...
-Selector:               app=d
-Replicas:               3 desired | 2 updated | 2 total | 2 available | 1 unavailable
-StrategyType:           RollingUpdate
-MinReadySeconds:        0
-RollingUpdateStrategy:  1 max unavailable, 1 max surge
-Pod Template:
-  Labels:  app=d
-  Containers:
-   e:
-    Image:        rahulvaish/springbootdocker
-________________________________________________________________________________________________________________________________________________________________________
-```
-###### Checking: What happend to the 3rd pod ?
-```
-_______________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
 bash-3.2$ kubectl get rs
 NAME           DESIRED   CURRENT   READY   AGE
 a-5cbdc789c7   3         2         2       32m
+
+
 bash-3.2$ kubectl -n rahulvaishnamespace describe rs a-5cbdc789c7 | less
 Name:           a-5cbdc789c7
 Namespace:      rahulvaishnamespace
@@ -151,7 +136,7 @@ Events:
   Warning  FailedCreate      38m                replicaset-controller  Error creating: pods "a-5cbdc789c7-dtl72" is forbidden: exceeded quota: podsresou:
 _______________________________________________________________________________________________________________________________________________________________________________________________________________
 ```
-*WHATIF: Create a Deployment (Replicas=3) before setting the Resource Quota (Pod=2):*
+*WHATIF: Create a Deployment (Replicas=3) before setting the Resource Quota (of Maximum Pod of 2):*
 ```
 ____________________________________________________________________________________________________
 bash-3.2$ kubectl get deployments
@@ -226,7 +211,7 @@ spec:
 ```
 kubectl apply -f deployment.yml
 ```
-###### Checking:
+###### Checking: Things look good !!
 ```
 ____________________________________________________________________________________________________
 [root@master K8Experiments]# kubectl get deployments
@@ -303,7 +288,7 @@ requests.memory  1000Mi (1Gi)  1Gi
 
 
 ```
-###### On increasing replicas=5:
+###### On increasing replicas=5 - Only 2 of 5 pods could be formed due to lack of resources:
 
 ```
 ____________________________________________________________________________________________________
