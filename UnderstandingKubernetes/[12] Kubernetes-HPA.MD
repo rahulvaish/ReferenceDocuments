@@ -1,5 +1,5 @@
 ### HPA - Horizontal Pod Scaling on K8
-###### The below guide aims to test HPA on CPU utilization. 
+###### HPA allows your application to scale Up/Down on demand. HPA automatically scales the number of pods in a replication controller, deployment or replica set. HPA is the performace toolkit for K8. The below guide aims to test and understand HPA on CPU utilization. 
 
 ##### STEP#1: Setup Metric server: </br>
   - git clone https://github.com/kubernetes-incubator/metrics-server.git </br>
