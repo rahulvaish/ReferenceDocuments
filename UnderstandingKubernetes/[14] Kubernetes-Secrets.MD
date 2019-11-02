@@ -1,5 +1,5 @@
 ### Secrets in K8
-Secrets are mechanism in Kubernetes,to store protected data. Let's follow below steps to understand secrets
+###### Secrets are mechanism in Kubernetes, to store protected data. The below guide aims to setup and understand secrets in Kubernetes.
 
 ##### STEP#1: Get a password for your plain text: 
 
