@@ -1,5 +1,5 @@
 ### HPA - Horizontal Pod Scaling on K8
-###### The below setup aims to test HPA on CPU utilization. 
+###### The below guide aims to test HPA on CPU utilization. 
 
 ##### STEP#1: Setup Metric server: </br>
   - git clone https://github.com/kubernetes-incubator/metrics-server.git </br>
