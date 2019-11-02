@@ -1,5 +1,5 @@
 ### Labels & Selectors in K8
-Labels are tags (generally used on pods) and Selectors are used for mapping and Resource Management purpose.
+###### Labels are tags on objects (generally used on pods) and Selectors are used for Mapping and Identifying obejcts. The below guide aims to setup and understand Labels & Selectors in Kubernetes.
 
 ##### STEP#1: Create a Deployment:
 ```
@@ -67,7 +67,7 @@ kubectl apply -f lsservice.yml
   - kubectl get services ->  g
 
 
-##### STEP#3: Create a Deployment with SET BASED SELECTORS - matchLabels & matchExpressions:
+##### STEP#3: Create a Deployment - SET BASED SELECTORS: matchLabels & matchExpressions:
 ```
 vi sblsdeployment.yml
 ```
@@ -106,7 +106,7 @@ spec:
 ```
 kubectl apply -f sblsdeployment.yml
 ```
-##### STEP#4: Create a Service for the SET BASED SELECTOR'S Deployment:
+##### STEP#4: Create a Service for the above Deployment:
 ```
 vi sblsservice.yml
 ``` 
@@ -143,7 +143,7 @@ kubectl apply -f sblsservice.yml
   - kubectl get pods -l 'environment = dev' -> POD Lists
 
 
-##### NOTE:  All of the requirements, from both matchLabels and matchExpressions are ANDed together – they must all be satisfied in order to match pod specification and service's selector crieteria. Example: Here, requirements means that a pod is identified with  tier: backend | environment: dev | app: d. Now ANDing matchLabels and matchExpressions results the same.Also Service's selector mentions tier: backend | environment: dev | app: d. If there is any mismatch between (pod specification) versus (matchLabels + matchExpressions) the yml compilation Fails, and if there is mismatch between service's selector crieteria and (matchLabels + matchExpressions) the service is unable to loacte the pod/deployment.
+##### NOTE:  All of the requirements, from both matchLabels and matchExpressions are ANDed together – they must all be satisfied in order to match pod specification and service's selector crieteria. Example: Here, requirements means that a pod is identified with  tier: backend | environment: dev | app: d. Now ANDing matchLabels and matchExpressions results the same.Also Service's selector mentions tier: backend | environment: dev | app: d. If there is any mismatch between (pod specification) versus (matchLabels + matchExpressions) the yml compilation fails, and if there is mismatch between service's selector crieteria and (matchLabels + matchExpressions) the service is unable to loacte the pod/deployment.
 
 
 ##### STEP#5:  Create a Deployment without MatchExpressions:
