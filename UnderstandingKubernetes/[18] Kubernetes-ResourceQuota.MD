@@ -1,4 +1,5 @@
-#### ResourceQuota is a practice to draw boundaries on Namespaces (in a cluster). To understand, let's see an example:
+### ResourceQuota in K8
+ResourceQuota is a practice to draw boundaries on Namespaces (in a cluster).
 
 ##### STEP#1: Create a Namespace:
 ```
