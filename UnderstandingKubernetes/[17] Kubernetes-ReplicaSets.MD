@@ -62,7 +62,7 @@ kubectl apply -f replicasetsservice.yml
 ![image](https://user-images.githubusercontent.com/689226/67162357-d962b900-f380-11e9-965e-8f36e0b96bb7.png)
 
 
-###### NOTE: RSs & Deployments allows ```SET BASED SELECTOR``` which means using ```matchLabels``` and ```matchExpressions```. Unlike [ReplicationController](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQAULITY BASED SELECTOR```. Example:
+##### NOTE: RSs & Deployments allows ```SET BASED SELECTOR``` which means using ```matchLabels``` and ```matchExpressions```. Unlike [ReplicationController](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQAULITY BASED SELECTOR```. Example:
 
 ##### STEP#1: Create a ReplicaSet (with matchLabels & matchExpressions) :
 ```
