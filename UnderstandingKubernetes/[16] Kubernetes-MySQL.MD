@@ -1,4 +1,4 @@
-### MySQL on K8 :
+### MySQL on K8
 
 ##### STEP#1: Get a password for your plain text: 
 
