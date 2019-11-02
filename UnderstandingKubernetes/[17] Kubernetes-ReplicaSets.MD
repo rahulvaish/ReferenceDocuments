@@ -1,7 +1,7 @@
 ### ReplicaSets in K8
-ReplicaSets are Kubernetes Controller, which are responsible for managing the pod lifecycle. This means- it makes sure that the specified number of pod replicas are up & running at any point of time. NOTE: RSs can be manually created (as below) or else it gets automatically created as as part of 'Deployment'. RSs uses ```SET BASED SELECTOR``` unlike [ReplicationControllers](https://github.com/rahulvaish/ReferenceDocuments/edit/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQUALITY BASED SELECTOR```.  
+###### ReplicaSets are Kubernetes Controller, which are responsible for managing the pod lifecycle. This means- it makes sure that the specified number of pod replicas are up & running at any point of time is maintained. NOTE: RSs can be manually created (as below) or else it gets automatically created as as part of 'Deployment'. RSs uses ```SET BASED SELECTOR``` unlike [ReplicationControllers](https://github.com/rahulvaish/ReferenceDocuments/edit/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQUALITY BASED SELECTOR```. The below guide aims to setup and understand ReplicaSets in Kubernetes.
 
-##### STEP#1: Prepare a YML to create ReplicaSet:
+##### STEP#1: Create a ReplicaSet:
 
 ```
 vi replicasets.yml
@@ -31,7 +31,7 @@ spec:
 ```
 kubectl apply -f replicasets.yml
 ```
-##### STEP#2: Prepare a YML to create ReplicaSet's Service:
+##### STEP#2: Create ReplicaSet's Service:
 ```
 vi replicasetsservice.yml
 ```
@@ -62,9 +62,9 @@ kubectl apply -f replicasetsservice.yml
 ![image](https://user-images.githubusercontent.com/689226/67162357-d962b900-f380-11e9-965e-8f36e0b96bb7.png)
 
 
-##### NOTE: RSs & Deployments allows ```SET BASED SELECTOR``` which means using ```matchLabels``` and ```matchExpressions```. Unlike [ReplicationController](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQAULITY BASED SELECTOR```. Example:
+###### NOTE: RSs & Deployments allows ```SET BASED SELECTOR``` which means using ```matchLabels``` and ```matchExpressions```. Unlike [ReplicationController](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B15%5D%20Kubernetes-ReplicationController.MD) which uses ```EQAULITY BASED SELECTOR```. Example:
 
-##### STEP#1: Prepare a YML to create ReplicaSet (with matchLabels & matchExpressions) :
+##### STEP#1: Create a ReplicaSet (with matchLabels & matchExpressions) :
 ```
 vi replicasetsmlme.yml
 ```
@@ -102,7 +102,7 @@ spec:
 ```
 kubectl apply -f replicasetsmlme.yml
 ```
-##### STEP#2: Prepare a YML to create ReplicaSet's Service:
+##### STEP#2: Create ReplicaSet's Service:
 ```
 vi replicasetsmlmeservice.yml
 ```
