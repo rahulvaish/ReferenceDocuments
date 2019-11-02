@@ -19,9 +19,6 @@ spec:
   selector:
     matchLabels:
       app: appdeploymentfromyml
-  selector:
-    matchLabels:
-      app: appdeploymentfromyml
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -88,9 +85,6 @@ metadata:
     app: appdeploymentfromyml
 spec:
   replicas: 4
-  selector:
-    matchLabels:
-      app: appdeploymentfromyml
   selector:
     matchLabels:
       app: appdeploymentfromyml
