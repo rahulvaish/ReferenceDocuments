@@ -114,14 +114,6 @@ spec:
 *STEP3 - STEP4* </br>
 ![image](https://user-images.githubusercontent.com/45539698/68069252-d3f36e80-fd83-11e9-90f6-d51d20f783a7.png)
 
-##### To check the rollout activity 'LIVE' execute:
-```
-kubectl rollout status deployment appdeploymentfromyml
-OR
-kubectl get pods -o wide
-```
-
-
 ##### Each time we do rollout activity(by making change in the rudep.yml), a new replicaSet is created. To list the Rollout states:
 ```
 bash-3.2$ kubectl get rs
