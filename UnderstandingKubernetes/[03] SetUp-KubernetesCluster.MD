@@ -66,8 +66,8 @@
 [4] systemctl start kubelet </br>
 [5] systemctl enable kubelet </br>
 [6] Run the JOIN command [**From the Master Initiation Logs**] </br> 
-    - ###### In case, the JOIN command is lost, execute: ``` kubeadm token create --print-join-command ```
-    - ###### In case, the installation is not for the first time, and you enconter hurdles to JOIN Slave with Master. Execute:  ```kubeadm reset --force``` and then re-try joining Slave with Master. </br>
+   - ###### In case, the JOIN command is lost, execute: ``` kubeadm token create --print-join-command ```
+   - ###### In case, the installation is not for the first time, and you enconter hurdles to JOIN Slave with Master. Execute:  ```kubeadm reset --force``` and then re-try joining Slave with Master. </br>
 [7] Navigate to Master Node and check 'kubectl get nodes' </br>
 
 <hr>
