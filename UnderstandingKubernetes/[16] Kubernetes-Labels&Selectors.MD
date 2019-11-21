@@ -186,3 +186,6 @@ kubectl apply -f lsdepwithoutme.yml
 
 
 ##### NOTE: MatchLabels & MatchExpressions works similar for ReplicaSets as Deployments. But, does not works for Replication controller.
+<hr>
+##### NOTE: Labels and Selectors also work on Nodes. Refer this [example](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B21%5D%20Kubernetes-DeamonSet.MD)
+<hr>
