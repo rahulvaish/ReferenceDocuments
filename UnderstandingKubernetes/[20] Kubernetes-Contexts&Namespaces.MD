@@ -1,4 +1,4 @@
-### Contexts & Namespces
+### Contexts & Namespaces
 ###### [Here](https://github.com/rahulvaish/ReferenceDocuments/blob/master/UnderstandingKubernetes/%5B05%5D%20Commands-ApplicationDeployment%5BNodes%20and%20Pods%5D.MD) we had a brief introduction about creating a namespace and switching. But, we didn't learnt anything about Contexts. C&N are used to make logical seperation/partition within a cluster. The below guide aims to setup and understand Contexts & Namespces in Kubernetes.
 
 
