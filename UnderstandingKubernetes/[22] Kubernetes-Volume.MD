@@ -149,7 +149,10 @@ kubectl apply -f pvc.yml
 ```
 #### * ```NOTE```: The PVC is searching for a PV with storageClassName “pvhp” and it is requesting a 1 GB storage from this volume.*
 ![image](https://user-images.githubusercontent.com/45539698/68702706-47308800-05af-11ea-8cc1-221932ff5cee.png)
-###### *STEP#3: Create a Deployment :*
+###### *STEP#3: Create /pvhp/data/ in Node#1 & Node#2 and add files there:*
+![image](https://user-images.githubusercontent.com/689226/71941590-55caa280-31e0-11ea-904d-22bc0dac6f43.png)
+
+###### *STEP#4: Create a Deployment :*
 ```
 vi pvdep.yml
 ```
@@ -186,13 +189,9 @@ spec:
 ```
 kubectl apply -f pvdep.yml
 ```
-###### *STEP#4: Insider Pod pvdep-7fd966f564-m8t9l, create a file:*
-![image](https://user-images.githubusercontent.com/45539698/68705968-05a2db80-05b5-11ea-903e-7030f96c60fc.png)
-##### *```NOTE```: The PV we chose is of type HostPath. In our case, there are two Pods, one Pod gets created Node#1, while anther Pod gets created on Node#2. We created a file inside Node#2's Pod on location /mnt-pvdep/. The created file can be accessed  by any other Pod which gets landed on Node#2.*
-![image](https://user-images.githubusercontent.com/45539698/68706481-f2444000-05b5-11ea-8e21-c15ace7b2013.png)
-##### *```NOTE```: Here, the new Pod which lands on Node#2 can access the file, as it too mounts on the same location /mnt-pvdep/. Also, to note that PV maintains a level of abstraction, which means /pvhp/data can't be located.*
 
-
+![image](https://user-images.githubusercontent.com/689226/71940851-db008800-31dd-11ea-95a2-f7830ce39c5e.png)
+##### *```NOTE```: The PV we chose is of type HostPath. In our case, there are two Pods, one Pod gets created Node#1, while anther Pod gets created on Node#2. The pod which lands on Node#1 can access pvpvcnode1.txt (present in "/pvhp/data" entwine with "pvchp" further entwined with mountPath "/mnt-pvdep/", similarly, the pod which lands on Node#2 can access pvpvcnode2.txt.
 
 <hr>
 
