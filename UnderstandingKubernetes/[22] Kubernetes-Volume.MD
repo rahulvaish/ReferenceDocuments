@@ -147,7 +147,7 @@ spec:
 ```
 kubectl apply -f pvc.yml
 ```
-#### *```NOTE```: The PVC is searching for a PV with storageClassName “pvhp” and it is requesting a 1 GB storage from this volume.*
+##### *```NOTE```: The PVC is searching for a PV with storageClassName “pvhp” and it is requesting a 1 GB storage from this volume.*
 ![image](https://user-images.githubusercontent.com/45539698/68702706-47308800-05af-11ea-8cc1-221932ff5cee.png)
 ###### *STEP#3: Create /pvhp/data/ in Node#1 & Node#2 and add files there:*
 ![image](https://user-images.githubusercontent.com/689226/71941590-55caa280-31e0-11ea-904d-22bc0dac6f43.png)
@@ -192,7 +192,7 @@ kubectl apply -f pvdep.yml
 
 ![image](https://user-images.githubusercontent.com/689226/71940851-db008800-31dd-11ea-95a2-f7830ce39c5e.png)
 
-#### *```NOTE```: The PV we chose is of type HostPath. In our case, there are two Pods, one Pod gets created Node#1, while anther Pod gets created on Node#2. The pod which lands on Node#1 can access pvpvcnode1.txt (present in "/pvhp/data" entwine with "pvchp" further entwined with mountPath "/mnt-pvdep/", similarly, the pod which lands on Node#2 can access pvpvcnode2.txt.*
+##### *```NOTE```: The PV we chose is of type HostPath. In our case, there are two Pods, one Pod gets created Node#1, while anther Pod gets created on Node#2. The pod which lands on Node#1 can access pvpvcnode1.txt (present in "/pvhp/data" entwine with "pvchp" further entwined with mountPath "/mnt-pvdep/", similarly, the pod which lands on Node#2 can access pvpvcnode2.txt.*
 
 <hr>
 
