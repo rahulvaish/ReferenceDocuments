@@ -70,6 +70,9 @@ status:
   loadBalancer: {}
 
 ```
+##### NOTE:
+![image](https://user-images.githubusercontent.com/689226/73609501-521a1800-45f4-11ea-95a6-d6c48454c77b.png)
+
 ##### STEP#6: Launch:
 ![image](https://user-images.githubusercontent.com/689226/73609191-47aa4f00-45f1-11ea-8a26-424a3eb26d4f.png)
 
