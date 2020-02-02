@@ -47,7 +47,7 @@ kubectl apply -f pvc.yml
 ``` 
 ###### Verify the Volume Bound:
 ![image](https://user-images.githubusercontent.com/689226/71983301-7af4fa80-324c-11ea-8a61-63b7832fdf99.png)
-##### *```NOTE:``` This learning guide is executed on Macintosh. That is why on creating PVC, PV got created automatically.*
+##### *```NOTE:``` This learning guide is executed on Macintosh. That is why on creating SC, PV got created automatically.*
 
 ##### STEP#3:  Deploying MySQL: 
 
