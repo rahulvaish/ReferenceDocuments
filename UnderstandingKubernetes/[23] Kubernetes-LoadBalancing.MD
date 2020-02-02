@@ -43,7 +43,32 @@ kubectl run application --image=rahulvaish/springbootdocker --port=8080
 ```
 ##### STEP#5: Create a Service:
 ```
-kubectl expose deployment nginx --type=LoadBalancer --name=application
+kubectl expose deployment application --type=LoadBalancer --name=application
+```
+###### *The above command results as:*
+```
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: application
+  name: application
+  selfLink: /api/v1/namespaces/default/services/application
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30439
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: application
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
+
 ```
 ##### STEP#6: Launch:
 ![image](https://user-images.githubusercontent.com/689226/73609191-47aa4f00-45f1-11ea-8a26-424a3eb26d4f.png)
