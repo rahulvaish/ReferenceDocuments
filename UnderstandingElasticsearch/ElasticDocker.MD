@@ -1,5 +1,5 @@
 ### Running Elastic on Docker
-###### The below guide aims to address how Applications are updated on Kubernetes.
+###### The below guide aims to address how to run ELK on Docker.
 
 ##### STEP#0: Fulfill the Pre-requisites:
   - Installation of Git 
@@ -30,3 +30,18 @@ $ docker-compose up
 
 ##### STEP#3: Launch Kibana:
 ![image](https://user-images.githubusercontent.com/689226/73813189-3cc80800-4805-11ea-9ec3-d153691d5179.png)
+
+
+<hr>
+
+##### NOTE: In te above approach if the container is lost, the data inside the container is also lost. Let's see an another approach to address this problem, which is using Docker Volumes:
+
+```
+docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 \
+  -v $PWD/elasticsearch/data:/root/esvolume/data \
+  -e "discovery.type=single-node" \
+  --name elasticsearch \
+  docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4
+```
+###### *Now, using the above command, the Volume is mounted on /root/esvolume/data*
+<hr>
