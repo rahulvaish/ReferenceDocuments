@@ -187,3 +187,81 @@ bash-3.2$ kubectl rollout undo deployment appdeploymentfromyml --to-revision=1
 kubectl rollout pause deployment appdeploymentfromyml
 kubectl rollout resume deployment appdeploymentfromyml
 ```
+<hr>
+
+##### RollBack Strategy is Deployments' feature. RollBack Strategy is not for ReplicaSets.
+
+###### Example: Run a RS appdeploymentfromyml with image rahulvaish/springbootdocker-v2
+
+```
+bash-3.2$ kubectl describe rs appdeploymentfromyml
+Name:         appdeploymentfromyml
+Namespace:    default
+Selector:     app=appdeploymentfromyml
+Labels:       app=appdeploymentfromyml
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+                {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{},"labels":{"app":"appdeploymentfromyml"},"name":"appdeploymentfrom...
+Replicas:     3 current / 3 desired
+Pods Status:  3 Running / 0 Waiting / 0 Succeeded / 0 Failed
+Pod Template:
+  Labels:  app=appdeploymentfromyml
+  Containers:
+   appdeploymentfromyml:
+    Image:        rahulvaish/springbootdocker-v2
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Events:
+  Type    Reason            Age    From                   Message
+  ----    ------            ----   ----                   -------
+  Normal  SuccessfulCreate  9m52s  replicaset-controller  Created pod: appdeploymentfromyml-2lhpm
+  Normal  SuccessfulCreate  9m52s  replicaset-controller  Created pod: appdeploymentfromyml-s7p6v
+  Normal  SuccessfulCreate  9m52s  replicaset-controller  Created pod: appdeploymentfromyml-gzkzr
+``` 
+###### Re-Run the same RS appdeploymentfromyml with image rahulvaish/springbootdocker
+```
+bash-3.2$ vi rs.yml
+bash-3.2$ kubectl apply -f rs.yml
+replicaset.apps/appdeploymentfromyml configured
+bash-3.2$ kubectl get rs
+NAME                   DESIRED   CURRENT   READY   AGE
+appdeploymentfromyml   3         3         3       11m
+bash-3.2$ kubectl describe rs appdeploymentfromyml
+Name:         appdeploymentfromyml
+Namespace:    default
+Selector:     app=appdeploymentfromyml
+Labels:       app=appdeploymentfromyml
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+                {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{},"labels":{"app":"appdeploymentfromyml"},"name":"appdeploymentfrom...
+Replicas:     3 current / 3 desired
+Pods Status:  3 Running / 0 Waiting / 0 Succeeded / 0 Failed
+Pod Template:
+  Labels:  app=appdeploymentfromyml
+  Containers:
+   appdeploymentfromyml:
+    Image:        rahulvaish/springbootdocker
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Events:
+  Type    Reason            Age   From                   Message
+  ----    ------            ----  ----                   -------
+  Normal  SuccessfulCreate  11m   replicaset-controller  Created pod: appdeploymentfromyml-2lhpm
+  Normal  SuccessfulCreate  11m   replicaset-controller  Created pod: appdeploymentfromyml-s7p6v
+  Normal  SuccessfulCreate  11m   replicaset-controller  Created pod: appdeploymentfromyml-gzkzr
+```
+###### RS maintains no Historical track...
+```
+bash-3.2$ kubectl rollout history rs
+error: no history viewer has been implemented for "ReplicaSet.extensions"
+
+
+
+bash-3.2$ kubectl get rs
+NAME                   DESIRED   CURRENT   READY   AGE
+appdeploymentfromyml   3         3         3       9m37s
+```
