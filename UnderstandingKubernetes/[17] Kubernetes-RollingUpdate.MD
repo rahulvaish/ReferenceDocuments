@@ -189,10 +189,33 @@ kubectl rollout resume deployment appdeploymentfromyml
 ```
 <hr>
 
-##### RollBack Strategy is Deployments' feature. RollBack Strategy is not for ReplicaSets.
+##### RollBack Strategy is Deployments' feature. RollBack Strategy is not meant for ReplicaSets.
 
 ###### Example: Run a RS appdeploymentfromyml with image rahulvaish/springbootdocker-v2
-
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: appdeploymentfromyml
+  labels:
+    app: appdeploymentfromyml
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: appdeploymentfromyml
+  template:
+    metadata:
+      labels:
+        app: appdeploymentfromyml
+    spec:
+      containers:
+      - name: appdeploymentfromyml
+        image: rahulvaish/springbootdocker-v2
+	ports:
+        - containerPort: 8080
+```
 ```
 bash-3.2$ kubectl describe rs appdeploymentfromyml
 Name:         appdeploymentfromyml
@@ -202,32 +225,55 @@ Labels:       app=appdeploymentfromyml
 Annotations:  kubectl.kubernetes.io/last-applied-configuration:
                 {"apiVersion":"apps/v1","kind":"ReplicaSet","metadata":{"annotations":{},"labels":{"app":"appdeploymentfromyml"},"name":"appdeploymentfrom...
 Replicas:     3 current / 3 desired
-Pods Status:  3 Running / 0 Waiting / 0 Succeeded / 0 Failed
+Pods Status:  1 Running / 2 Waiting / 0 Succeeded / 0 Failed
 Pod Template:
   Labels:  app=appdeploymentfromyml
   Containers:
    appdeploymentfromyml:
     Image:        rahulvaish/springbootdocker-v2
-    Port:         <none>
-    Host Port:    <none>
+    Port:         8080/TCP
+    Host Port:    0/TCP
     Environment:  <none>
     Mounts:       <none>
   Volumes:        <none>
 Events:
-  Type    Reason            Age    From                   Message
-  ----    ------            ----   ----                   -------
-  Normal  SuccessfulCreate  9m52s  replicaset-controller  Created pod: appdeploymentfromyml-2lhpm
-  Normal  SuccessfulCreate  9m52s  replicaset-controller  Created pod: appdeploymentfromyml-s7p6v
-  Normal  SuccessfulCreate  9m52s  replicaset-controller  Created pod: appdeploymentfromyml-gzkzr
+  Type    Reason            Age   From                   Message
+  ----    ------            ----  ----                   -------
+  Normal  SuccessfulCreate  15s   replicaset-controller  Created pod: appdeploymentfromyml-zvc2f
+  Normal  SuccessfulCreate  15s   replicaset-controller  Created pod: appdeploymentfromyml-6k2p9
+  Normal  SuccessfulCreate  15s   replicaset-controller  Created pod: appdeploymentfromyml-blx9p
+bash-3.2$ 
+
 ``` 
 ###### Re-Run the same RS appdeploymentfromyml with image rahulvaish/springbootdocker
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: appdeploymentfromyml
+  labels:
+    app: appdeploymentfromyml
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: appdeploymentfromyml
+  template:
+    metadata:
+      labels:
+        app: appdeploymentfromyml
+    spec:
+      containers:
+      - name: appdeploymentfromyml
+        image: rahulvaish/springbootdocker
+	ports:
+        - containerPort: 8080
+```
 ```
 bash-3.2$ vi rs.yml
 bash-3.2$ kubectl apply -f rs.yml
 replicaset.apps/appdeploymentfromyml configured
-bash-3.2$ kubectl get rs
-NAME                   DESIRED   CURRENT   READY   AGE
-appdeploymentfromyml   3         3         3       11m
 bash-3.2$ kubectl describe rs appdeploymentfromyml
 Name:         appdeploymentfromyml
 Namespace:    default
@@ -242,17 +288,17 @@ Pod Template:
   Containers:
    appdeploymentfromyml:
     Image:        rahulvaish/springbootdocker
-    Port:         <none>
-    Host Port:    <none>
+    Port:         8080/TCP
+    Host Port:    0/TCP
     Environment:  <none>
     Mounts:       <none>
   Volumes:        <none>
 Events:
   Type    Reason            Age   From                   Message
   ----    ------            ----  ----                   -------
-  Normal  SuccessfulCreate  11m   replicaset-controller  Created pod: appdeploymentfromyml-2lhpm
-  Normal  SuccessfulCreate  11m   replicaset-controller  Created pod: appdeploymentfromyml-s7p6v
-  Normal  SuccessfulCreate  11m   replicaset-controller  Created pod: appdeploymentfromyml-gzkzr
+  Normal  SuccessfulCreate  102s  replicaset-controller  Created pod: appdeploymentfromyml-zvc2f
+  Normal  SuccessfulCreate  102s  replicaset-controller  Created pod: appdeploymentfromyml-6k2p9
+  Normal  SuccessfulCreate  102s  replicaset-controller  Created pod: appdeploymentfromyml-blx9p
 ```
 ###### RS maintains no Historical track...
 ```
