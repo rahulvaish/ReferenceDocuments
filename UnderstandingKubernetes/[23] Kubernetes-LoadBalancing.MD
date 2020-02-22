@@ -79,6 +79,14 @@ status:
 
   - From KubeMaster: http://192.168.152.163:32539/hello/ works !!
   - From KubeMaster: http://192.168.152.164:32539/hello/ works !!
+  
+  - From outside VM: http://192.168.152.160:8080/hello/ works !!
+  - From outside VM:  http://192.168.152.160:8080/hello/ works !!
+
+  - From outside VM: http://192.168.152.163:32539/hello/ works !!
+  - From outside VM:  http://192.168.152.164:32539/hello/ does not works [because Pod is residing on Node1(192.168.152.163)] !!
+    ![image](https://user-images.githubusercontent.com/689226/75087973-dd8c2680-556c-11ea-8819-f59f43646c51.png)
+
 
 *Rest No Permutation/Combination Works. Example:*
   - From Node1: http://192.168.152.160:32539/hello/ does not works !!
