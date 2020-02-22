@@ -76,20 +76,24 @@ status:
 ##### STEP#6: Launch & Observe:
   - From Node1: http://192.168.152.160:8080/hello/ works !!
   - From Node2: http://192.168.152.160:8080/hello/ works !!
-
-  - From KubeMaster: http://192.168.152.163:32539/hello/ works !!
-  - From KubeMaster: http://192.168.152.164:32539/hello/ works !!
-  
   - From outside VM: http://192.168.152.160:8080/hello/ works !!
-  - From outside VM:  http://192.168.152.160:8080/hello/ works !!
+ 
+  - From KubeMaster: http://<NODE_IP_WHERE_POD_EXISTS>:32539/hello/ works !!
+  - From outside VM: http://<NODE_IP_WHERE_POD_EXISTS>:32539/hello/ works !!
+  
+  **Here Pod is in Node1. What if Node1 goes down:** 
+  
+  - From Node2: http://192.168.152.160:8080/hello/ works !!
+  - From outside VM: http://192.168.152.160:8080/hello/ works !!
+  
+  - From KubeMaster: http://<NODE_IP_WHERE_POD_EXISTS>:32539/hello/ works !!
+  - From outside VM: http://<NODE_IP_WHERE_POD_EXISTS>:32539/hello/ works !!
+  
+*Rest No Permutation/Combination Works anywhere. Example:*
+  - http://192.168.152.160:32539/hello/ does not works !!
+  - http://<NODE_IP_WHERE_POD_EXISTS>:8080/hello/ does not works !!
 
-  - From outside VM: http://192.168.152.163:32539/hello/ works !!
-  - From outside VM:  http://192.168.152.164:32539/hello/ does not works [because Pod is residing on Node1(192.168.152.163)] !!
-    ![image](https://user-images.githubusercontent.com/689226/75087973-dd8c2680-556c-11ea-8819-f59f43646c51.png)
 
 
-*Rest No Permutation/Combination Works. Example:*
-  - From Node1: http://192.168.152.160:32539/hello/ does not works !!
-  - From KubeMaster: http://192.168.152.163:8080/hello/ does not works !!
 
 
