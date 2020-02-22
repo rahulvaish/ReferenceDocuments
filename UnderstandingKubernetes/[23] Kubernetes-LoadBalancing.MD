@@ -15,7 +15,7 @@ kubectl get all -n metallb-system
 ```
 ![image](https://user-images.githubusercontent.com/45539698/73608480-6f95b480-45e9-11ea-8116-5225a32b9c86.png)
 ##### STEP#3: Check the range of Cluster IPs:
-![image](https://user-images.githubusercontent.com/45539698/73608507-ed59c000-45e9-11ea-8210-66596cfd285c.png)
+![image](https://user-images.githubusercontent.com/45539698/75086661-c04f5c00-555c-11ea-9733-efd048137caa.png)
 ##### STEP#4: From Step#3, Create a configuration manifest:*
 ```
 vi lbconfigmap.yml 
@@ -32,7 +32,7 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 192.168.152.150-192.168.152.160
+      - 192.168.152.160-192.168.152.165
 ```
 ```
 kubectl apply -f lbconfigmap.yml
@@ -71,12 +71,17 @@ status:
 
 ```
 ##### NOTE:
-![image](https://user-images.githubusercontent.com/689226/73609501-521a1800-45f4-11ea-95a6-d6c48454c77b.png)
+![image](https://user-images.githubusercontent.com/45539698/75086678-f1c82780-555c-11ea-8669-55363b3edf71.png)
 
-##### STEP#6: Launch:
-![image](https://user-images.githubusercontent.com/689226/73609191-47aa4f00-45f1-11ea-8a26-424a3eb26d4f.png)
+##### STEP#6: Launch & Observe:
+  - From Node1: http://192.168.152.160:8080/hello/ works !!
+  - From Node2: http://192.168.152.160:8080/hello/ works !!
 
+  - From KubeMaster: http://192.168.152.163:32539/hello/ works !!
+  - From KubeMaster: http://192.168.152.164:32539/hello/ works !!
 
-
+*Rest No Permutation/Combination Works. Example:*
+  - From Node1: http://192.168.152.160:32539/hello/ does not works !!
+  - From KubeMaster: http://192.168.152.163:8080/hello/ does not works !!
 
 
