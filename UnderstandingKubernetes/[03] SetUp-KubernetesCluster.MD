@@ -18,33 +18,57 @@
 
 <hr>
 
-### COMMANDS ON MASTER:
+### To SetUp K8 MASTER:
 
-[1] yum clean all </br>
-[2] yum install kubeadm -y </br>
-[3] systemctl start kubelet </br>
-[4] systemctl enable kubelet </br> 
-[5] kubeadm init </br>
+```
+kubeadm reset 
+sudo yum remove kubeadm kubectl kubelet kubernetes-cni kube*
+sudo yum autoremove 
+sudo rm -rf ~/.kube
+kubeadm reset --force
+rm -rf /var/cache/yum
+yum clean all
+yum install kubeadm -y
+systemctl start kubelet
+systemctl enable kubelet
+kubeadm init
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+kubectl get nodes
+kubeadm token create --print-join-command
+```
+###### If Bridge Issue Occures:
+```
+kubeadm reset 
+sudo yum remove kubeadm kubectl kubelet kubernetes-cni kube*
+sudo yum autoremove 
+sudo rm -rf ~/.kube
+kubeadm reset --force
+rm -rf /var/cache/yum
+yum clean all
+yum install kubeadm -y
+systemctl start kubelet
+systemctl enable kubelet
+kubeadm init
 
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
+sysctl net.bridge.bridge-nf-call-iptables=1 
+sysctl net.bridge.bridge-nf-call-ip6tables=1 
+sysctl -w net.ipv4.ip_forward=1
 
-##### If you get error for 'bridge':
-    echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
-    sysctl net.bridge.bridge-nf-call-iptables=1 
-    sysctl net.bridge.bridge-nf-call-ip6tables=1 
-    sysctl -w net.ipv4.ip_forward=1 
-    
-    
-[6] kubeadm init </br>
-[7] mkdir -p $HOME/.kube </br>
-[8] cp -i /etc/kubernetes/admin.conf $HOME/.kube/config </br>
-[9] chown $(id -u):$(id -g) $HOME/.kube/config </br>
-[10] kubectl get nodes </br>
-[11] kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')" </br>
-[12] kubectl get nodes </br>
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+kubectl get nodes
+kubeadm token create --print-join-command
+```
 
 <hr>
 
-### COMMANDS ON NODE:
+### To SetUp K8 Node:
 
 ##### To check if we are on Node: 
     The prompt will be root@node1. If not, we need to follow the below steps: 
@@ -52,22 +76,34 @@
     [2] exit 
     [3] Launch new Terminal. 
     [4] Check if the prompt is root@node1
+    
+```
+kubeadm reset --force
+yum clean all
+rm -rf /var/cache/yum
+yum install kubeadm -y
+systemctl start kubelet
+systemctl enable kubelet
+kubeadm join ........................
+```
 
-[1] yum clean all </br>
-[2] rm -rf /var/cache/yum </br>
-[3] yum install kubeadm -y </br>
+###### If Bridge Issue Occures:
+```
+kubeadm reset --force
+yum clean all
+rm -rf /var/cache/yum
+yum install kubeadm -y
 
-##### If you get error for bridge: </br>
-    echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
-    sysctl net.bridge.bridge-nf-call-iptables=1 
-    sysctl net.bridge.bridge-nf-call-ip6tables=1 
-    sysctl -w net.ipv4.ip_forward=1 
- 
-[4] systemctl start kubelet </br>
-[5] systemctl enable kubelet </br>
-[6] Run the JOIN command [**From the Master Initiation Logs**] </br> 
-   - ###### In case, the JOIN command is lost, execute: ``` kubeadm token create --print-join-command ```
-   - ###### In case, the installation is not for the first time, and you enconter hurdles to JOIN Slave with Master. Execute:  ```kubeadm reset --force``` and then re-try joining Slave with Master. </br>
-[7] Navigate to Master Node and check 'kubectl get nodes' </br>
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables 
+sysctl net.bridge.bridge-nf-call-iptables=1 
+sysctl net.bridge.bridge-nf-call-ip6tables=1 
+sysctl -w net.ipv4.ip_forward=1
+
+systemctl start kubelet
+systemctl enable kubelet
+kubeadm join ........................
+```
+
+
 
 <hr>
