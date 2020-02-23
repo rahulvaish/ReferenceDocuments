@@ -3,11 +3,53 @@
 
 ##### STEP#1: Create a Deployment:
 ```
+vi deployment.yml
+```
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appdeployment
+  labels:
+    app: appdeployment
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: appdeployment
+  template:
+    metadata:
+      labels:
+        app: appdeployment
+    spec:
+      containers:
+      - name: appdeployment
+        image: rahulvaish/springbootdocker
+        ports:
+        - containerPort: 8080
 
-
+```
+```
+kubectl apply -f deployment.yml
 ```
 ##### STEP#2: Create a PDB:
 ```
+vi pdb.yml
+```
+```
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: pdbdemo
+spec:
+  minAvailable: 3
+  selector:
+    matchLabels:
+      app: appdeployment
+
+```
+```
+kubectl apply -f pdb.yml
 ```
 
 ##### STEP#3: Check the status of Nodes and the Deployment:
