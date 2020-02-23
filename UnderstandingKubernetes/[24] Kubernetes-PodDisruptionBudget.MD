@@ -53,8 +53,18 @@ kubectl apply -f pdb.yml
 ```
 
 ##### STEP#3: Check the status of Nodes and the Deployment:
-
+![image](https://user-images.githubusercontent.com/689226/75103994-08d44b80-5629-11ea-918f-59b88bd64fde.png)
 
 ##### STEP#4: Drain Node1:
+```
 
+```
+![image](https://user-images.githubusercontent.com/689226/75104006-489b3300-5629-11ea-875c-3eff14deb88f.png)
+![image](https://user-images.githubusercontent.com/689226/75104023-7d0eef00-5629-11ea-97d5-69bd39ca5344.png)
 ##### STEP#5: Drain Node2:
+```
+```
+![image](https://user-images.githubusercontent.com/689226/75104069-72088e80-562a-11ea-95cb-c65a65dc0a41.png)
+
+##### STEP#6: Bringing Node1 back:
+![image](https://user-images.githubusercontent.com/689226/75104129-4cc85000-562b-11ea-85a5-d1912e03539a.png)
