@@ -1,7 +1,9 @@
 ### Kubernetes Health Checks
 ###### Kubernetes Health Checks - Readiness and Liveliness Probing is a technique that K8 uses to understand the health of Pods. eadiness and Liveliness Probes can be described as below:
-
-
+![image](https://user-images.githubusercontent.com/689226/76403379-d6f21180-63aa-11ea-9b14-ca6fcc93c7c8.png)
+![image](https://user-images.githubusercontent.com/689226/76404137-02293080-63ac-11ea-9a89-45d49929020f.png)
+![RP](https://storage.googleapis.com/gweb-cloudblog-publish/original_images/google-kubernetes-probe-readiness6ktf.GIF)
+![LP](https://storage.googleapis.com/gweb-cloudblog-publish/original_images/google-kubernetes-probe-livenessae14.GIF)
 
 ##### STEP#1: Create a Deployment:
 ```
