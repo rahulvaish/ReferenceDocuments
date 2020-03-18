@@ -32,3 +32,4 @@ spec:
   
 [2] kubectl create -f appservicefromyml.yml <br>
 [3] Get IP from ifconfig, and then use that IP:31746/ on WebBrowser (VM/outside VM) </br>
+[4] kubectl -n kube-system get pods -o wide
