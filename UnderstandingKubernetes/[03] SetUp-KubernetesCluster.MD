@@ -21,7 +21,7 @@
 ### To SetUp K8 MASTER:
 
 ```
-kubeadm reset 
+kubeadm reset --force 
 sudo yum remove kubeadm kubectl kubelet kubernetes-cni kube*
 sudo yum autoremove 
 sudo rm -rf ~/.kube
@@ -41,7 +41,7 @@ kubeadm token create --print-join-command
 ```
 ###### If Bridge Issue Occures:
 ```
-kubeadm reset 
+kubeadm reset --force
 sudo yum remove kubeadm kubectl kubelet kubernetes-cni kube*
 sudo yum autoremove 
 sudo rm -rf ~/.kube
