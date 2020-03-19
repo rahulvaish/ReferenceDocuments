@@ -114,7 +114,8 @@ spec:
 ```
 kubectl apply -f serv1.yml
 ```
-![image](https://user-images.githubusercontent.com/689226/77075151-e7903080-6a17-11ea-9443-58263b858823.png)
+![image](https://user-images.githubusercontent.com/689226/77098346-3948b300-6a38-11ea-8113-58ba0b4dde99.png)
+
 ##### STEP#5: Test:
 ![image](https://user-images.githubusercontent.com/689226/77075256-0c84a380-6a18-11ea-894a-a78ac3b2bcd2.png)
 ###### NOTE: Internally http://localhost:31756/addition/float/ calls http://calculatorservice:8080/addition/float/. Refer Calculator Service/Client [Source Code](https://github.com/rahulvaish/SpringBoot-Java/tree/SpringBootK8IO)
