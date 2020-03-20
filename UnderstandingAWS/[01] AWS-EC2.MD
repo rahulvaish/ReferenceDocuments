@@ -34,7 +34,7 @@
 ![image](https://user-images.githubusercontent.com/689226/77171557-a1ec6a00-6ae2-11ea-9a0d-89686888922e.png)
 <br>
 <br>
-#### Download the .pem file
+#### Download the .pem file:
 ![image](https://user-images.githubusercontent.com/689226/77171587-b0d31c80-6ae2-11ea-9ca1-36cfa5cb4f15.png)
 <br>
 <br>
@@ -44,5 +44,9 @@
 ![image](https://user-images.githubusercontent.com/689226/77171845-090a1e80-6ae3-11ea-9804-7037feebc4f5.png)
 <br>
 <br>
+#### Connect EC2 from Local Machine:
+```
+ssh -i myawsec2keypair.pem ec2-user@18.212.142.3
+```
 ![image](https://user-images.githubusercontent.com/689226/77172706-723e6180-6ae4-11ea-8650-8347990fdc1b.png)
 
