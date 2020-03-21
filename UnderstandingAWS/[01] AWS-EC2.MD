@@ -46,6 +46,9 @@
 <br>
 #### Connect EC2 from Local Machine:
 ```
+sudo su -
+```
+```
 ssh -i myawsec2keypair.pem ec2-user@18.212.142.3
 ```
 ![image](https://user-images.githubusercontent.com/689226/77172706-723e6180-6ae4-11ea-8650-8347990fdc1b.png)
