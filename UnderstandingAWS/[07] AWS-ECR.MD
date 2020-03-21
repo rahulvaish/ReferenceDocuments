@@ -8,8 +8,8 @@
 <br>
 ![image](https://user-images.githubusercontent.com/689226/77225698-79727780-6b97-11ea-9cdc-93c8fe4f6a09.png)
 <br>
-##### Follow te below steps:
-#### STEP#1: SetUp AWSCLI on root:
+#### Follow te below steps:
+##### STEP#1: SetUp AWSCLI on root:
 ```
 rahul@rahul:~$ sudo su -
 root@rahul:~# pip3 install awscli
@@ -22,7 +22,7 @@ AWS Secret Access Key [******QL8A]: 91OeSZNh/wsZVbFbCWhmoSz3uO0B3JvVHtBjA7lU
 Default region name [us-east-1]: us-east-1
 Default output format [None]:
 ```
-#### STEP#2: Follow the commands from "View Push Commands":
+##### STEP#2: Follow the commands from "View Push Commands":
 ```
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 355202349949.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo
 ```
