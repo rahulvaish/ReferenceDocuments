@@ -18,7 +18,7 @@ root@rahul:~# aws --version
 ```
 root@rahul:~# aws configure
 AWS Access Key ID [******GJK4]: AKIAVFM5VXN6S3USJTHE            
-AWS Secret Access Key [******QL8A]: 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
+AWS Secret Access Key [******QL8A]: 91O******wsZVbF*********O0B3JvVH*****lU
 Default region name [us-east-1]: us-east-1
 Default output format [None]:
 ```
