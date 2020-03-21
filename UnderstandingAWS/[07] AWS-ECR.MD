@@ -28,5 +28,25 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 ```
 ![image](https://user-images.githubusercontent.com/689226/77229196-6d47e380-6bb2-11ea-8e27-9111257b524d.png)
 
+```
+root@rahul:~# git clone https://github.com/rahulvaish/Docker-Java/
+root@rahul:~/Docker-Java# git checkout SpringBootDocker
+root@rahul:~/Docker-Java/SpringBootDocker# apt install maven
+root@rahul:~/Docker-Java/SpringBootDocker# mvn clean install
+```
+
+```
+docker build -t rahulvaishawsrepo .
+```
+```
+docker tag rahulvaishawsrepo:latest 355202349949.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo:latest
+```
+```
+docker push 355202349949.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo:latest
+```
+##### STEP#3: Check AWS ECR:
+
+![image](https://user-images.githubusercontent.com/689226/77230077-c403ec00-6bb7-11ea-9d2e-6128a13573e1.png)
+
 
 
