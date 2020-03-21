@@ -7,11 +7,11 @@
 ![image](https://user-images.githubusercontent.com/689226/77194671-6499d380-6b06-11ea-9634-4cc2dc3b01a9.png)
 ##### Outbound Rules:
 ![image](https://user-images.githubusercontent.com/689226/77194804-a0cd3400-6b06-11ea-8f3d-0a4c4b4da012.png)
-##### STEP#2: Plug this Security Group in the existing EC2:
+##### STEP#2: Plug this Security Group with the existing EC2:
 ![image](https://user-images.githubusercontent.com/689226/77195161-35379680-6b07-11ea-8552-f10f5fb6ef5c.png)
 
 ![image](https://user-images.githubusercontent.com/689226/77195220-48e2fd00-6b07-11ea-937b-28524afe9094.png)
-##### STEP#3: Install HTTPD:
+##### STEP#3: Install HTTPD on EC2:
 ```
 sudo su -
 yum install httpd
