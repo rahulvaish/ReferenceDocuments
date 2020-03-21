@@ -15,6 +15,7 @@ rahul@rahul:~$ sudo su -
 root@rahul:~# pip3 install awscli
 root@rahul:~# aws --version
 ```
+###### Get 'AWS Access Key ID' & 'AWS Secret Access Key' from IAM Service.
 ```
 root@rahul:~# aws configure
 AWS Access Key ID [******GJK4]: AK*****************E            
@@ -24,7 +25,7 @@ Default output format [None]:
 ```
 ##### STEP#2: Follow the commands from "View Push Commands":
 ```
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 355202349949.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 35********49.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo
 ```
 ![image](https://user-images.githubusercontent.com/689226/77229196-6d47e380-6bb2-11ea-8e27-9111257b524d.png)
 
@@ -39,10 +40,10 @@ root@rahul:~/Docker-Java/SpringBootDocker# mvn clean install
 docker build -t rahulvaishawsrepo .
 ```
 ```
-docker tag rahulvaishawsrepo:latest 355202349949.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo:latest
+docker tag rahulvaishawsrepo:latest 35********49.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo:latest
 ```
 ```
-docker push 355202349949.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo:latest
+docker push 35********49.dkr.ecr.us-east-1.amazonaws.com/rahulvaishawsrepo:latest
 ```
 ##### STEP#3: Check AWS ECR:
 
