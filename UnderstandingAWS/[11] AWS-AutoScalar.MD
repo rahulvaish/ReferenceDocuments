@@ -31,5 +31,16 @@
 
 ##### Create a AutoScaling Group:
 
+![image](https://user-images.githubusercontent.com/689226/77351442-cacf6200-6d63-11ea-8e1e-1823d00ac8be.png)
+![image](https://user-images.githubusercontent.com/689226/77352486-467dde80-6d65-11ea-9335-45da88311cae.png)
+![image](https://user-images.githubusercontent.com/689226/77352621-79c06d80-6d65-11ea-825d-9d3ef2bd7daf.png)
+![image](https://user-images.githubusercontent.com/689226/77352655-8644c600-6d65-11ea-90eb-daf04193fe43.png)
+
+
+![image](https://user-images.githubusercontent.com/689226/77352917-023f0e00-6d66-11ea-99c8-a4b9affee37d.png)
+![image](https://user-images.githubusercontent.com/689226/77352962-1be05580-6d66-11ea-912b-41381194579d.png)
+![image](https://user-images.githubusercontent.com/689226/77353250-a628b980-6d66-11ea-9338-0ba0aea5112b.png)
+
+
 
 
