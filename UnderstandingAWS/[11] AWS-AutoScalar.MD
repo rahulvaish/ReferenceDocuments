@@ -7,7 +7,16 @@
 
 ##### Plug into a EC2 instance:
 ![image](https://user-images.githubusercontent.com/689226/77343587-eb91ba80-6d57-11ea-9b45-7d1a53d7ae24.png)
-
+```
+THE EC2 INSTANCE BOOTSTRAP CODE:
+```
+```
+#!/bin/bash
+yum install -y httpd
+chkconfig httpd on
+echo "<html><body>Hello World</body></html>" > /var/www/html/index.html
+service httpd start 
+```
 <hr>
 
 ##### Create an Image:
