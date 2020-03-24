@@ -53,12 +53,13 @@ service httpd start
 ##### [2] Create Auto Scaling Configuration:
 ![image](https://user-images.githubusercontent.com/689226/77377146-4814ca00-6d98-11ea-8114-6e3382d6c042.png)
 ![image](https://user-images.githubusercontent.com/689226/77377079-21569380-6d98-11ea-84da-c7f5809716c1.png)
+![image](https://user-images.githubusercontent.com/689226/77471807-eb1d2080-6e38-11ea-98bf-9d393ce49344.png)
+
 ![image](https://user-images.githubusercontent.com/689226/77377359-d9843c00-6d98-11ea-96ae-81d17a84c18b.png)
 ![image](https://user-images.githubusercontent.com/689226/77377396-033d6300-6d99-11ea-87b5-689a4df01947.png)
 ![image](https://user-images.githubusercontent.com/689226/77377471-2d8f2080-6d99-11ea-810b-bae3186d0560.png)
 ![image](https://user-images.githubusercontent.com/689226/77377456-249e4f00-6d99-11ea-9bd8-1298588156e1.png)
 ![image](https://user-images.githubusercontent.com/689226/77377569-7b0b8d80-6d99-11ea-8e81-08b47e357cdb.png)
-
 ![image](https://user-images.githubusercontent.com/689226/77377686-ddfd2480-6d99-11ea-9649-1457af224d6b.png)
 
 
