@@ -52,7 +52,6 @@ service httpd start
 
 ##### [2] Create Auto Scaling Configuration:
 ![image](https://user-images.githubusercontent.com/689226/77377146-4814ca00-6d98-11ea-8114-6e3382d6c042.png)
-![image](https://user-images.githubusercontent.com/689226/77377079-21569380-6d98-11ea-84da-c7f5809716c1.png)
 ![image](https://user-images.githubusercontent.com/689226/77471807-eb1d2080-6e38-11ea-98bf-9d393ce49344.png)
 
 ![image](https://user-images.githubusercontent.com/689226/77377359-d9843c00-6d98-11ea-96ae-81d17a84c18b.png)
