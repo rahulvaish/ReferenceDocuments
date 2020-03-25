@@ -30,3 +30,10 @@
 ![image](https://user-images.githubusercontent.com/689226/77256918-110abf80-6c97-11ea-92a8-2e4dc517cc8d.png)
 ##### On next file Upload, when Bucket is Public:
 ![image](https://user-images.githubusercontent.com/689226/77257350-b757c480-6c99-11ea-9d7e-65d52fd7355c.png)
+
+
+
+<hr>
+
+#### In case you want to host a static website, you can choose this property of your bucket:
+![image](https://user-images.githubusercontent.com/689226/77505204-85588500-6e88-11ea-831f-db8d2a3e7ad2.png)
