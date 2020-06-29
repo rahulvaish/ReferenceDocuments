@@ -27,4 +27,4 @@ Paste text into the entry and hit start to generate a word cloud that is saved t
 
 Based on the pytagcloud package.
 <a href=""><img src="https://github.com/sugarlabs/wordcloud/blob/master/WordCloud.png" alt="wordcloud"></a>
-<a href="Ideas-2020.md">![](https://github.com/sugarlabs/wordcloud/blob/master/WordCloud.png)</a> 
+<a href="">![](https://github.com/sugarlabs/wordcloud/blob/master/WordCloud.png)</a> 
