@@ -21,12 +21,12 @@ npm install -g json-server
       "emailAddress": "a@gmail.com"
     },
     {
-      "id": 3
+      "id": 3,
       "personName": "b",
       "emailAddress": "b@gmail.com",
     },
     {
-      "id": 4
+      "id": 4,
       "personName": "c",
       "emailAddress": "c@gmail.com",
     }
