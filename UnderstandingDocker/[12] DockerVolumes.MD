@@ -31,7 +31,7 @@ bash-3.2$
 
 ##### STEP#4: Attach a Docker Volume with Container (MySQL):
 ```
-docker run --name testmysqldocker -d -p 3306:3306 -e MYSQL_DATABASE=dev -e MYSQL_ROOT_PASSWORD=root -v runtimemysqldockervolume:/var/lib/mysql/  mysql
+docker run --name testmysqldocker -d -p 3306:3306 -e MYSQL_DATABASE=dev -e MYSQL_ROOT_PASSWORD=root -v mydockervolume:/var/lib/mysql/  mysql
 ```
 
 ##### STEP#5: Delete Docker Volume:
@@ -49,7 +49,7 @@ docker volume rm mydockervolume
     ```
   - ###### *STEP#C: Remove the Volume:*
     ```
-    docker volume rm runtimemysqldockervolume
+    docker volume rm mydockervolume
     ```
 
 <hr>
